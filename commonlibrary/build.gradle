@@ -57,8 +57,8 @@ install {
                 }
                 developers {
                     developer {
-                        id '921668753'    //填写的一些基本信息
-                        name 'ck213'
+                        id 'ck213'    //填写的一些基本信息
+                        name '921668753'
                         email 'ck921668753@qq.com'
                     }
                 }

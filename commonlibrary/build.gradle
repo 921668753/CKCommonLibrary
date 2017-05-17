@@ -42,6 +42,15 @@ dependencies {
     //    compile 'cn.pedant.sweetalert:library:latest.release'//SweetAlertDialog弹框
     compile 'com.github.f0ris.sweetalert:library:latest.release'
 }
+allprojects {
+    tasks.withType(Javadoc) {//兼容中文字符
+        options{
+            encoding "UTF-8"
+            charSet 'UTF-8'
+            links "http://docs.oracle.com/javase/7/docs/api"
+        }
+    }
+}
 
 def siteUrl = 'https://github.com/921668753/ckcommonlibrary' // 项目的主页
 def gitUrl = 'https://github.com/921668753/ckcommonlibrary.git' // Git仓库的url

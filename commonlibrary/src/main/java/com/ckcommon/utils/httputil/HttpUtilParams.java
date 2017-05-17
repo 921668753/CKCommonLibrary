@@ -28,9 +28,9 @@ public class HttpUtilParams {
     }
 
     /**
-     * 不是很好，待改进
      *
      * @return
+     * 不是很好，待改进
      */
     public static HttpUtilParams getInstance() {
         dstroyInstance();

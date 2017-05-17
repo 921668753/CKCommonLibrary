@@ -150,6 +150,8 @@ public class WebViewLayout extends LinearLayout {
     }
 
     /**
+     *
+     * @param text
      * 设置标题栏文字，只有在isUpdateTitle为false时有用
      */
     public void setTitleText(String text) {
@@ -159,6 +161,7 @@ public class WebViewLayout extends LinearLayout {
     }
 
     /**
+     * @param textRes
      * 设置标题栏文字，只有在isUpdateTitle为false时有用
      */
     public void setTitleText(int textRes) {
@@ -168,6 +171,8 @@ public class WebViewLayout extends LinearLayout {
     }
 
     /**
+     *
+     * @param isVisible
      * 设置标题栏是否隐藏
      */
     public void setTitleVisibility(boolean isVisible) {
@@ -179,8 +184,8 @@ public class WebViewLayout extends LinearLayout {
     }
 
     /**
+     * @param url
      * 加载网页
-     * created by ydy on 2016/7/15 10:14
      */
     public void loadUrl(String url) {
         webView.loadUrl(url);

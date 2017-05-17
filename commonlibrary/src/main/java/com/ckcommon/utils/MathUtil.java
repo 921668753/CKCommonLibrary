@@ -18,14 +18,11 @@ public  class MathUtil {
     }
 
     /**
-     * 判断非负数的整数或者携带一位或者两位的小数
      *
      * @param obj
-     * @return boolean
-     * @throws
-     * @function:
-     * @author:
-     * @since 1.0.0
+     * 判断非负数的整数或者携带一位或者两位的小数
+     * @return
+     * 判断非负数的整数或者携带一位或者两位的小数
      */
     public static boolean judgeTwoDecimal(Object obj) {
         boolean flag = false;

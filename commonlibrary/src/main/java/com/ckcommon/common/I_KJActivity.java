@@ -38,7 +38,8 @@ public interface I_KJActivity {
     void initWidget();
 
     /**
-     * 点击事件回调方法
+     * @param v 点击事件回调方法
      */
+
     void widgetClick(View v);
 }

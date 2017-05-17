@@ -15,8 +15,11 @@ public class DataCleanManager {
     /**
      * 当你在项目中需要查下缓存大小，就使用getTotalCacheSize(Context)方法，清空缓存，就使用clearAllCache(Context)方法
      * @param context
+     * 对象
      * @return
+     * 返回参数
      * @throws Exception
+     * 错误
      */
     public static String getTotalCacheSize(Context context) throws Exception {
         long cacheSize = getFolderSize(context.getCacheDir());
@@ -72,7 +75,9 @@ public class DataCleanManager {
      * 格式化单位
      *
      * @param size
+     * 传入参数
      * @return
+     * 返回参数
      */
     public static String getFormatSize(double size) {
         double kiloByte = size / 1024;

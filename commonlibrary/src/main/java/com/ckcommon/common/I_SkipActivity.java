@@ -15,32 +15,60 @@ import android.os.Bundle;
  */
 public interface I_SkipActivity {
     /**
-     * skip to @param(cls)，and call @param(aty's) finish() method
+     *
+     * @param aty finish() method
+     * @param cls
+     *   skip to @param(cls)，and call @param(aty's)
      */
+
     public void skipActivity(Activity aty, Class<?> cls);
 
     /**
-     * skip to @param(cls)，and call @param(aty's) finish() method
+     *
+     * @param aty
+     * finish() method
+     * @param it
+     * 传递参数
      */
     public void skipActivity(Activity aty, Intent it);
 
     /**
-     * skip to @param(cls)，and call @param(aty's) finish() method
+     *
+     * @param aty
+     * 传递参数
+     * @param cls
+     * 传递参数
+     * @param extras
+     * 传递参数
      */
     public void skipActivity(Activity aty, Class<?> cls, Bundle extras);
 
     /**
-     * show a @param(cls)，but can't finish activity
+     *
+     * @param aty
+     * 传递参数
+     * @param cls
+     * 传递参数
      */
     public void showActivity(Activity aty, Class<?> cls);
 
     /**
-     * show a @param(cls)，but can't finish activity
+     *
+     * @param aty
+     * 传递参数
+     * @param it
+     * 传递参数
      */
     public void showActivity(Activity aty, Intent it);
 
     /**
-     * show a @param(cls)，but can't finish activity
+     *
+     * @param aty
+     * 传递参数
+     * @param cls
+     * 传递参数
+     * @param extras
+     * 传递参数
      */
     public void showActivity(Activity aty, Class<?> cls, Bundle extras);
 }

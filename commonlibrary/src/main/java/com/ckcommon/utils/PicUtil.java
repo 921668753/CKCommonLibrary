@@ -25,12 +25,7 @@ public class PicUtil {
         }
     }
 
-    /**
-     * ѹ��ͼƬ ����ѹ����
-     *
-     * @param image
-     * @return
-     */
+
     public Bitmap compressImage(Bitmap image) {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         image.compress(Bitmap.CompressFormat.JPEG, 100, baos);// ����ѹ������������100��ʾ��ѹ������ѹ��������ݴ�ŵ�baos��
@@ -45,13 +40,7 @@ public class PicUtil {
         return bitmap;
     }
 
-    /**
-     * ����ͼƬ
-     *
-     * @param photo
-     * @param spath
-     * @return
-     */
+
     public boolean saveImage(Bitmap photo, String spath) {
         try {
             BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(spath, false));

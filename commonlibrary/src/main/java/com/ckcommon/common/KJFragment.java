@@ -116,6 +116,8 @@ public abstract class KJFragment extends Fragment implements View.OnClickListene
     }
 
     /**
+     *
+     * @param v
      * widget click method
      */
     protected void widgetClick(View v) {

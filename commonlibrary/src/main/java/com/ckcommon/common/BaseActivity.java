@@ -7,11 +7,6 @@ import com.kymjs.rxvolley.RxVolley;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
-
-//import com.umeng.analytics.MobclickAgent;
-
-//import org.kymjs.kjframe.KJActivity;
-
 /**
  * 公用的父Activity
  * 防止除向其他共用时增加
@@ -23,9 +18,8 @@ public abstract class BaseActivity extends KJActivity implements LoadingDialogVi
     private SweetAlertDialog mLoadingDialog;
 
     /**
-     * 解决framenet重影
+     * @param outState  解决framenet重影
      *
-     * @param outState
      */
     @Override
     protected void onSaveInstanceState(Bundle outState) {

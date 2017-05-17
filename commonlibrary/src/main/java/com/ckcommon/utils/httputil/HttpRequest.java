@@ -63,8 +63,11 @@ public class HttpRequest {
      * get请求
      *
      * @param url
+     * 请求地址
      * @param params
+     * 请求参数
      * @param responseListener
+     * 回调监听
      */
     public static void requestGetHttp(String url, HttpParams params, ResponseListener responseListener) {
         requestHttp(url, RxVolley.Method.GET, RxVolley.ContentType.FORM, params, true, responseListener);
@@ -74,8 +77,11 @@ public class HttpRequest {
      * postjosn请求
      *
      * @param url
+     * 请求地址
      * @param params
+     * 请求参数
      * @param responseListener
+     * 回调监听
      */
     public static void requestPostHttp(String url, HttpParams params, ResponseListener responseListener) {
         requestHttp(url, RxVolley.Method.GET, RxVolley.ContentType.JSON, params, true, responseListener);
@@ -85,8 +91,11 @@ public class HttpRequest {
      * PUTjosn请求
      *
      * @param url
+     * 请求地址
      * @param params
+     * 请求参数
      * @param responseListener
+     * 回调监听
      */
     public static void requestPutHttp(String url, HttpParams params, ResponseListener responseListener) {
         requestHttp(url, RxVolley.Method.PUT, RxVolley.ContentType.FORM, params, true, responseListener);
@@ -96,8 +105,11 @@ public class HttpRequest {
      * DELETEjosn请求
      *
      * @param url
+     * 请求地址
      * @param params
+     * 请求参数
      * @param responseListener
+     * 回调监听
      */
     public static void requestDeleteHttp(String url, HttpParams params, ResponseListener responseListener) {
         requestHttp(url, RxVolley.Method.DELETE, RxVolley.ContentType.FORM, params, true, responseListener);
@@ -108,7 +120,9 @@ public class HttpRequest {
      * 网络请求成功
      *
      * @param s
+     * 返回参数
      * @param listener
+     * 回调监听
      */
     @SuppressWarnings("unchecked")
     public static boolean doSuccess(String s, ResponseListener listener) {
@@ -125,7 +139,9 @@ public class HttpRequest {
      * 接口返回失败信息处理
      *
      * @param errorMsg
+     * 错误信息
      * @param listener
+     * 回调监听
      */
     public static void doFailure(String errorMsg, ResponseListener listener) {
         if (errorMsg == null) {

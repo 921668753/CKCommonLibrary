@@ -30,9 +30,10 @@ public class ViewInject {
     }
 
     /**
-     * 显示一个toast
+     *
      *
      * @param msg
+     * 显示一个toast
      */
     public static void toast(String msg) {
         try {
@@ -42,9 +43,10 @@ public class ViewInject {
     }
 
     /**
-     * 长时间显示一个toast
+     *
      *
      * @param msg
+     * 长时间显示一个toast
      */
     public static void longToast(String msg) {
         try {
@@ -54,9 +56,11 @@ public class ViewInject {
     }
 
     /**
-     * 自定义显示Toast时间
      *
+     * @param msg
+     *   自定义显示Toast时间
      * @param duration
+     *   自定义显示Toast时间
      */
     public static void toast(String msg, int duration) {
         try {
@@ -68,6 +72,12 @@ public class ViewInject {
 
     /**
      * 自定义图片Toat
+     * @param msg
+     * 消息
+     * @param duration
+     * 时间
+     * @param img
+     * 图片
      */
     public static void toast(String msg, int duration, int img) {
         try {
@@ -78,29 +88,34 @@ public class ViewInject {
 
 
     /**
-     * 长时间显示一个toast
      *
+     * @param context
+     * 长时间显示一个toast
      * @param msg
+     * 消息
      */
     public static void longToast(Context context, String msg) {
         Toast.makeText(context, msg, Toast.LENGTH_LONG).show();
     }
 
     /**
+     *  @param context
      * 显示一个toast
      *
      * @param msg
+     * 消息
      */
     public static void toast(Context context, String msg) {
         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
     }
 
     /**
-     * 自定义显示Toast时间
-     *
      * @param context
+     * 自定义显示Toast时间
      * @param message
+     * 消息
      * @param duration
+     * 时间
      */
     public static void toast(Context context, String message, int duration) {
 
@@ -109,7 +124,15 @@ public class ViewInject {
 
 
     /**
+     *
+     * @param context
      * 自定义图片Toat
+     * @param message
+     * 消息
+     * @param duration
+     * 时间
+     * @param img
+     * 图片
      */
     public static void showImg(Context context, String message, int duration, int img) {
         Toast toast = Toast.makeText(context, message, duration);

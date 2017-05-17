@@ -117,12 +117,14 @@ public class HttpRequest {
 
 
     /**
-     * 网络请求成功
+     *  * 网络请求成功
      *
      * @param s
      * 返回参数
      * @param listener
      * 回调监听
+     * @return
+     * 返回参数
      */
     @SuppressWarnings("unchecked")
     public static boolean doSuccess(String s, ResponseListener listener) {

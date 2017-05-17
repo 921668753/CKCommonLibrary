@@ -28,6 +28,8 @@ public class KJActivityStack {
     }
 
     /**
+     *
+     * @param activity
      * 添加Activity到栈
      */
     public void addActivity(I_KJActivity activity) {
@@ -53,7 +55,11 @@ public class KJActivityStack {
     }
 
     /**
-     * 获取当前Activity（栈顶Activity） 没有找到则返回null
+     *
+     * @param cls
+     * 获取当前Activity（栈顶Activity）
+     * @return
+     * 没有找到则返回null
      */
     public Activity findActivity(Class<?> cls) {
         I_KJActivity activity = null;
@@ -75,6 +81,7 @@ public class KJActivityStack {
     }
 
     /**
+     * @param activity
      * 结束指定的Activity(重载)
      */
     public void finishActivity(Activity activity) {
@@ -86,6 +93,8 @@ public class KJActivityStack {
     }
 
     /**
+     *
+     * @param cls
      * 结束指定的Activity(重载)
      */
     public void finishActivity(Class<?> cls) {
@@ -105,9 +114,8 @@ public class KJActivityStack {
     }
 
     /**
-     * 关闭除了指定activity以外的全部activity 如果cls不存在于栈中，则栈全部清空
-     *
      * @param cls
+     * 关闭除了指定activity以外的全部activity 如果cls不存在于栈中，则栈全部清空
      */
     public void finishOthersActivity(Class<?> cls) {
         for (int i = 0; i < activityStack.size(); i++) {
@@ -140,7 +148,8 @@ public class KJActivityStack {
     }
 
     /**
-     * 应用程序退出
+     * @param context
+     *  应用程序退出
      */
     public void appExit(Context context) {
         try {

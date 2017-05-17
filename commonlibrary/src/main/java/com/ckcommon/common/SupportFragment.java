@@ -56,10 +56,9 @@ public abstract class SupportFragment extends Fragment implements
                                          ViewGroup container, Bundle bundle);
 
     /**
+     * @param parentView
      * initialization widget, you should look like parentView.findviewbyid(id);
      * call method
-     *
-     * @param parentView
      */
     protected void initWidget(View parentView) {
     }
@@ -97,6 +96,7 @@ public abstract class SupportFragment extends Fragment implements
     }
 
     /**
+     * @param v
      * widget click method
      */
     protected void widgetClick(View v) {

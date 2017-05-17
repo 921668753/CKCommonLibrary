@@ -14,10 +14,16 @@ import com.kymjs.rxvolley.client.HttpParams;
 
 public class HttpRequest {
 
+    /**
+     * 图片保存路径存放的文件名
+     */
+    public static int SUCCESS = 1;
+
+
     public static RxVolley.Builder builder = new RxVolley.Builder();
 
 
-    public static void requestHttp(String url, int httpMethod, int contentType, HttpParams params, boolean isCache, ResponseListener responseListener) {
+    public static void requestHttp(String url, int httpMethod, int contentType, HttpParams params, boolean isCache, final ResponseListener responseListener) {
         //http请求的回调，内置了很多方法，详细请查看源码
 //包括在异步响应的onSuccessInAsync():注不能做UI操作
 //网络请求成功时的回调onSuccess()
@@ -107,7 +113,7 @@ public class HttpRequest {
     @SuppressWarnings("unchecked")
     public static boolean doSuccess(String s, ResponseListener listener) {
         BaseResult baseResult = (BaseResult) JsonUtil.getInstance().json2Obj(s, BaseResult.class);
-        if (baseResult.getCode() != NumericConstants.SUCCESS) {
+        if (baseResult.getCode() != SUCCESS) {
             listener.onFailure(baseResult.getMessage());
             return false;
         }

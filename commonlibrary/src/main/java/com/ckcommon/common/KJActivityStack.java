@@ -21,6 +21,7 @@ public class KJActivityStack {
     }
 
     /**
+     * @return
      * 获取当前Activity栈中元素个数
      */
     public int getCount() {
@@ -40,6 +41,7 @@ public class KJActivityStack {
     }
 
     /**
+     * @return
      * 获取当前Activity（栈顶Activity）
      */
     public Activity topActivity() {

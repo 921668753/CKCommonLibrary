@@ -1,20 +1,21 @@
 apply plugin: 'com.android.library'
 
+//apply plugin: 'com.github.dcendents.android-maven'
+//apply plugin: 'com.novoda.bintray-release'//添加插件
+
 apply plugin: 'com.github.dcendents.android-maven'
-apply plugin: 'com.novoda.bintray-release'//添加插件
-
-
-// 这个version是区分library版本的，因此当我们需要更新library时记得修改这个version
-// 这个version影响后面的引用
+apply plugin: 'com.jfrog.bintray'
+// This is the library version used when deploying the artifact
+version = "1.0.0"
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
-
+    resourcePrefix "ckcommonlibrary__"    //这个随便填
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 25
         versionCode 1
-        versionName "1.0.0"
+        versionName version
     }
     buildTypes {
         release {
@@ -22,33 +23,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    lintOptions {
-        abortOnError false
-    }
-}
-
-allprojects {
-    tasks.withType(Javadoc) {//兼容中文字符
-        options{
-            encoding "UTF-8"
-            charSet 'UTF-8'
-            links "http://docs.oracle.com/javase/7/docs/api"
-        }
-    }
-}
-publish {
-    userOrg = '921668753'//bintray.com 用户名/组织名 user/org name
-    groupId = 'com.ckcommonlibrary'//JCenter上显示的路径 path
-    artifactId = 'ckcommonlibrary'//项目名称 project name
-    publishVersion = '1.0.0'//版本号 version code
-    desc = 'this is a commonlibrary for android'//项目描述 description
-    website = 'https://github.com/921668753/ckcommonlibrary' //项目网址链接 link
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:25.3.1'
-
 
     compile 'com.kymjs.rxvolley:rxvolley:latest.release'//网络请求框架
     compile 'com.kymjs.rxvolley:okhttp3:latest.release'
@@ -62,4 +41,71 @@ dependencies {
 
     //    compile 'cn.pedant.sweetalert:library:latest.release'//SweetAlertDialog弹框
     compile 'com.github.f0ris.sweetalert:library:latest.release'
+}
+
+def siteUrl = 'https://github.com/921668753/ckcommonlibrary' // 项目的主页
+def gitUrl = 'https://github.com/921668753/ckcommonlibrary.git' // Git仓库的url
+group = "com.ckcommon" // Maven Group ID for the artifact，一般填你唯一的包名
+install {
+    repositories.mavenInstaller {
+        // This generates POM.xml with proper parameters
+        pom {
+            project {
+                packaging 'aar'
+                // Add your description here
+                name 'Android BounceProgressBar Widget' //项目描述
+                url siteUrl
+                // Set your license
+                licenses {
+                    license {
+                        name 'The Apache Software License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id '921668753'    //填写的一些基本信息
+                        name 'ck213'
+                        email 'ck921668753@qq.com'
+                    }
+                }
+                scm {
+                    connection gitUrl
+                    developerConnection gitUrl
+                    url siteUrl
+                }
+            }
+        }
+    }
+}
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+bintray {
+    user = properties.getProperty("bintray.user")
+    key = properties.getProperty("bintray.apikey")
+    configurations = ['archives']
+    pkg {
+        repo = "maven"
+        name = "ckcommonlibrary"    //发布到JCenter上的项目名字
+        websiteUrl = siteUrl
+        vcsUrl = gitUrl
+        licenses = ["Apache-2.0"]
+        publish = true
+    }
 }

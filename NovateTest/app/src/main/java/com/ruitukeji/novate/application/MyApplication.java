@@ -156,7 +156,7 @@ public class MyApplication extends Application {
      * 下载初始化
      */
     public void initDownload() {
-        DownloadInit.init(getBaseContext());
+        //DownloadInit.init(getBaseContext());
     }
 
 

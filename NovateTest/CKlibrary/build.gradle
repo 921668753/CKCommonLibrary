@@ -1,0 +1,216 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion "26.0.2"
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+
+        externalNativeBuild {
+            cmake {
+                cppFlags ""
+            }
+        }
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    //    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+
+    //        exclude group: 'com.android.support', module: 'support-annotations'
+
+    //    })
+    implementation 'com.android.support:appcompat-v7:27.0.0'
+    implementation 'com.android.support:animated-vector-drawable:27.0.0'
+    implementation 'com.android.support:recyclerview-v7:27.0.0'
+    implementation 'com.android.support:animated-vector-drawable:27.0.0'
+
+    //design包
+    implementation 'com.android.support:design:27.0.0'
+
+    //    /**
+
+    //     * RefreshLayout that support for OverScroll and better than iOS.
+
+    //     * 支持下拉刷新和上拉加载的RefreshLayout,自带越界回弹效果，
+
+    //     * 支持RecyclerView,AbsListView,ScrollView,WebView
+
+    //     */
+
+    //    implementation 'com.lcodecorex:tkrefreshlayout:1.0.7'
+
+    /**
+     * 网络请求框架
+     * https://github.com/Tamicer/Novate
+     */
+    api 'com.tamic.novate:novate:latest.release'
+
+    /**
+     * json解析
+     * https://github.com/google/gson
+     */
+    api 'com.google.code.gson:gson:2.8.2'
+
+    /**
+     * SweetAlertDialog弹框
+     * https://github.com/F0RIS/sweet-alert-dialog
+     */
+    api 'com.github.f0ris.sweetalert:library:1.5.2'
+
+    /**
+     *  图片加载框架 https://github.com/bumptech/glide
+     *  中文文档 https://muyangmin.github.io/glide-docs-cn/
+     */
+    api 'com.github.bumptech.glide:glide:4.3.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.3.0'
+
+    /**
+     * 图像转换开源库
+     * https://github.com/wasabeef/glide-transformations
+     */
+    api 'jp.wasabeef:glide-transformations:3.0.1'
+    // If you want to use the GPU Filters
+    api 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.4.1'
+
+    /**
+     *  图片选择器
+     *  https://github.com/jeasonlzy/ImagePicker
+     */
+    api 'com.lzy.widget:imagepicker:0.6.1'
+
+    /**
+     *  图片压缩
+     *   https://github.com/nanchen2251/CompressHelper
+     */
+    implementation 'com.github.nanchen2251:CompressHelper:1.0.5'
+
+    //    compile 'com.kymjs.core:common:latest.release'
+
+    //
+
+    //    /**
+
+    //     * https://github.com/Justson/RxTools
+
+    //     * Android开发人员不得不收集的工具类集合 | 支付宝支付
+
+    //     * | 微信支付（统一下单） | 微信分享 | 一键集成UCrop选择圆形头像
+
+    //     * | 一键集成二维码和条形码的扫描与生成 | 常用Dialog | WebView的封装可播放视频
+
+    //     * | 仿斗鱼滑动验证码 | Toast封装 | 震动 | GPS | Location定位
+
+    //     * | 压缩与加密 | 图片缩放 | Exif 图片添加地理位置信息（经纬度）
+
+    //     * | 蛛网等级 | 颜色选择器 | 编译运行一下说不定会找到惊喜
+
+    //     */
+
+    //    compile 'com.github.vondear:RxTools:latest.release'//请替换成上方 JitPack 最新的版本号
+
+    //
+
+    //    //    /**
+
+    //    //     *AgentWeb 是基于 Android WebView 一个轻量级浏览器库 ， 使用很方便 ， 集成进你应用 ，只需几行代码 。
+
+    //    //     * https://github.com/Justson/AgentWeb
+
+    //    //     */
+
+    //    //    compile 'com.just.agentweb:agentweb:latest.release'
+
+    //
+
+    /**
+     *  AgentWebX5 是基于腾讯X5 的一个Web库
+     *  https://github.com/Justson/AgentWebX5
+     */
+
+    // implementation 'com.just.agentwebX5:agentwebX5:1.0.0'
+
+    //
+
+    //    //    //UINavigationBar 风格的 Titlebar
+
+    //    //    compile 'cn.bingoogolapple:bga-titlebar:latest.release'
+
+    //    compile files('libs/tbs_sdk_thirdapp_v3.5.0.1004_43500_sharewithdownload_withoutGame_obfs_20170801_113025.jar')
+
+    //
+
+    /**
+     * https://github.com/Othershe/CalendarView
+     * 日历控件
+     */
+    api 'com.github.Othershe:CalendarView:1.1.0'
+
+//    /**
+//     * https://github.com/Tamicer/FastDownloader
+//     * 基于Okhttp, 结合Retrofit，使用Okio ，简化处理I/O操作，加入多种设计模式，实现基于链式的android平台多线程下载利器！
+//     */
+//    api 'com.tamic.fastdownloader:Android-FastDownloader:latest.release'
+
+    /**
+     * https://github.com/AriaLyy/Aria
+     * Aria项目源于工作中遇到的一个文件下载管理的需求，当时被下载折磨的痛不欲生，
+     * 从那时起便萌生了编写一个简单易用，稳当高效的下载框架，
+     * aria经历了1.0到3.0的开发，算是越来越接近当初所制定的目标了。
+     */
+    api 'com.arialyy.aria:aria-core:latest.release'
+    annotationProcessor 'com.arialyy.aria:aria-compiler:latest.release'
+
+    /**
+     * https://github.com/bingoogolapple/BGABanner-Android
+     *     图片轮番最新版本依赖库
+     */
+    implementation 'cn.bingoogolapple:bga-banner:2.1.7@aar'
+
+    // adapter
+    implementation 'cn.bingoogolapple:bga-adapter:1.2.0@aar'
+
+    //刷新框架
+    implementation 'cn.bingoogolapple:bga-refreshlayout:1.1.7@aar'
+
+    //UINavigationBar 风格的 Titlebar
+    implementation 'cn.bingoogolapple:bga-titlebar:1.0.8@aar'
+
+    //    compile 'com.kymjs.rxvolley:bitmapcore:latest.release'//图片加载框架
+    api 'com.kymjs.core:common:latest.release'
+
+    //    /**
+
+    //     * https://github.com/googlesamples/easypermissions
+
+    //     *     权限申请工具类
+
+    //     */
+
+    //    compile 'pub.devrel:easypermissions:1.0.1'
+
+    /**
+     * https://github.com/yanzhenjie/AndPermission
+     *     权限申请工具类
+     */
+    api 'com.yanzhenjie:permission:1.1.2'
+
+
+}

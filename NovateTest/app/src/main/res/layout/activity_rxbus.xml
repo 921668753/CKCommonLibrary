@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_send"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen50"
+        android:gravity="center"
+        android:text="RxBus发送消息" />
+
+
+    <TextView
+        android:id="@+id/tv_mapList"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen50"
+        android:gravity="center"
+        android:text="MapList发送消息" />
+    <TextView style="@style/MatchAuto" />
+
+
+    <TextView
+        android:id="@+id/tv_accordingTo"
+        style="@style/MatchWrap"
+        android:gravity="center"
+        android:paddingBottom="@dimen/dimen10"
+        android:paddingLeft="@dimen/dimen8"
+        android:paddingRight="@dimen/dimen8"
+        android:paddingTop="@dimen/dimen10"
+        android:text="" />
+
+
+</LinearLayout>

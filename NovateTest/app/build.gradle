@@ -1,0 +1,65 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion '26.0.2'
+
+    defaultConfig {
+        applicationId "com.ruitukeji.novate"
+        minSdkVersion 19
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        
+        externalNativeBuild {
+            cmake {
+                cppFlags ""
+            }
+        }
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+configurations.all {
+    resolutionStrategy.force 'com.android.support:support-annotations:27.0.0'
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    //        exclude group: 'com.android.support', module: 'support-annotations'
+    //    })
+    implementation 'com.android.support:appcompat-v7:27.0.0'
+    implementation 'com.android.support:transition:27.0.0'
+    implementation 'com.android.support:design:27.0.0'
+    /**'
+     * https://github.com/HiJesse/Android-NativeLogger
+     * 日志管理框架
+     */
+    implementation 'com.github.hijesse:android-logger:2.0.0'
+    /**
+     * http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/1223/3796.html
+     * http://blog.csdn.net/fan7983377/article/details/73850282
+     * 解决 64K 限制，方法数超过65535解决方法
+     * https://github.com/mmadev/multidex-sample
+     */
+    implementation 'com.android.support:multidex:1.0.2'
+    //让应用支持多DEX文件
+    implementation 'com.android.support:multidex-instrumentation:1.0.2'
+    //让应用支持多DEX文件
+    implementation project(':CKlibrary')
+}

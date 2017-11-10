@@ -451,11 +451,25 @@ public static final ** CREATOR;
 
 
 ## ----------------------------------
-##      AgentWebX5
+##      AndPermission
 ## ----------------------------------
 -keepclassmembers class ** {
     @com.yanzhenjie.permission.PermissionYes <methods>;
 }
 -keepclassmembers class ** {
     @com.yanzhenjie.permission.PermissionNo <methods>;
+}
+
+## ----------------------------------
+##      Aria 下载管理器
+## ----------------------------------
+-dontwarn com.arialyy.aria.**
+-keep class com.arialyy.aria.**{*;}
+-keep class **$$DownloadListenerProxy{ *; }
+-keep class **$$UploadListenerProxy{ *; }
+-keep class **$$DownloadGroupListenerProxy{ *; }
+-keepclasseswithmembernames class * {
+    @Download.* <methods>;
+    @Upload.* <methods>;
+    @DownloadGroup.* <methods>;
 }

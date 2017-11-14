@@ -217,6 +217,10 @@ public class NovateRestponse {
         RxApiManager.get().add(KJActivityStack.create().topActivity().getClass().getName(), subscription);
     }
 
+//    public static void requestDownload1(String url, Map<String, Object> headers, String savePath, String name, DownLoadCallBack downLoadCallBack) {
+//        Subscription subscription = (Subscription) requestNovateBuilder(false).addHeader(headers).build().rxDownload(null, url, savePath, name, downLoadCallBack);
+//        RxApiManager.get().add(KJActivityStack.create().topActivity().getClass().getName(), subscription);
+//    }
 
     /**
      * 网络请求成功

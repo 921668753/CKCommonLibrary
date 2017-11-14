@@ -61,7 +61,7 @@ dependencies {
      * 网络请求框架
      * https://github.com/Tamicer/Novate
      */
-    api 'com.tamic.novate:novate:latest.release'
+    api 'com.tamic.novate:novate:1.5.4.3'
 
     /**
      * json解析
@@ -175,8 +175,8 @@ dependencies {
      * 从那时起便萌生了编写一个简单易用，稳当高效的下载框架，
      * aria经历了1.0到3.0的开发，算是越来越接近当初所制定的目标了。
      */
-    api 'com.arialyy.aria:aria-core:latest.release'
-    annotationProcessor 'com.arialyy.aria:aria-compiler:latest.release'
+    api 'com.arialyy.aria:aria-core:3.3.6'
+    annotationProcessor 'com.arialyy.aria:aria-compiler:3.3.6'
 
     /**
      * https://github.com/bingoogolapple/BGABanner-Android
@@ -194,7 +194,7 @@ dependencies {
     implementation 'cn.bingoogolapple:bga-titlebar:1.0.8@aar'
 
     //    compile 'com.kymjs.rxvolley:bitmapcore:latest.release'//图片加载框架
-    api 'com.kymjs.core:common:latest.release'
+    api 'com.kymjs.core:common:1.0.10'
 
     //    /**
 

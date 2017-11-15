@@ -16,8 +16,6 @@ import com.ruitukeji.novate.download.DownloadActivity;
 import com.ruitukeji.novate.entity.AppConfigBean;
 import com.ruitukeji.novate.rxbus.RxBusActivity;
 
-import rx.functions.Action1;
-
 public class MainActivity extends BaseActivity implements MainContract.View {
 
 

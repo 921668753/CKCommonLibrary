@@ -23,7 +23,6 @@ public class MainPresenter implements MainContract.Presenter {
 
     @Override
     public void getAppConfig() {
-
         Map<String, Object> parameters = NovateRestponse.requestParameters();
         RequestClient.getAppConfig(parameters, new ResponseListener<String>() {
             @Override
@@ -45,9 +44,9 @@ public class MainPresenter implements MainContract.Presenter {
             @Override
             public void onChanged(String key, int progress, long fileSizeDownloaded, long totalSize) {
 //                String size = MathUtil.keepZero(((double) fileSizeDownloaded) * 100 / totalSize) + "%";
-                Log.d("tag", progress + "");
-                String size = progress + "%";
-                mView.showLoadingDialog(KJActivityStack.create().topActivity().getString(R.string.download) + size);
+                        Log.d("tag", progress + "");
+                        String size = progress + "%";
+                        mView.showLoadingDialog(KJActivityStack.create().topActivity().getString(R.string.download) + size);
             }
 
             @Override
@@ -57,7 +56,12 @@ public class MainPresenter implements MainContract.Presenter {
 
             @Override
             public void onFailure(int errCode, String msg) {
-                mView.errorMsg(errCode, msg);
+                KJActivityStack.create().topActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        mView.errorMsg(errCode, msg);
+                    }
+                });
             }
         });
     }

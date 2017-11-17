@@ -5,6 +5,7 @@ import android.content.Context;
 import android.support.multidex.MultiDex;
 
 
+
 /**
  * 程序入口
  * Created by Administrator on 2016/5/13.
@@ -154,7 +155,8 @@ public class MyApplication extends Application {
      * 下载初始化
      */
     public void initDownload() {
-        //DownloadInit.init(getBaseContext());
+
+
     }
 
 

@@ -25,6 +25,12 @@ public class JsonUtil {
         return jsonUtil;
     }
 
+
+    public static Gson getGson() {
+        return gson;
+    }
+
+
     public static String obj2JsonString(Object obj) {
         return gson.toJson(obj);
     }

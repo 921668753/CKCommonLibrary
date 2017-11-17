@@ -87,6 +87,7 @@ dependencies {
      * https://github.com/wasabeef/glide-transformations
      */
     api 'jp.wasabeef:glide-transformations:3.0.1'
+
     // If you want to use the GPU Filters
     api 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.4.1'
 
@@ -163,35 +164,40 @@ dependencies {
      */
     api 'com.github.Othershe:CalendarView:1.1.0'
 
-//    /**
-//     * https://github.com/Tamicer/FastDownloader
-//     * 基于Okhttp, 结合Retrofit，使用Okio ，简化处理I/O操作，加入多种设计模式，实现基于链式的android平台多线程下载利器！
-//     */
-//    api 'com.tamic.fastdownloader:Android-FastDownloader:latest.release'
+    //    /**
+
+    //     * https://github.com/Tamicer/FastDownloader
+
+    //     * 基于Okhttp, 结合Retrofit，使用Okio ，简化处理I/O操作，加入多种设计模式，实现基于链式的android平台多线程下载利器！
+
+    //     */
+
+    //    api 'com.tamic.fastdownloader:Android-FastDownloader:latest.release'
 
     /**
+     * https://github.com/AlexLiuSheng/CheckVersionLib
      * https://github.com/AriaLyy/Aria
      * Aria项目源于工作中遇到的一个文件下载管理的需求，当时被下载折磨的痛不欲生，
      * 从那时起便萌生了编写一个简单易用，稳当高效的下载框架，
      * aria经历了1.0到3.0的开发，算是越来越接近当初所制定的目标了。
      */
-    api 'com.arialyy.aria:aria-core:3.3.6'
-    annotationProcessor 'com.arialyy.aria:aria-compiler:3.3.6'
+//    api 'com.arialyy.aria:aria-core:3.3.6'
+//    annotationProcessor 'com.arialyy.aria:aria-compiler:3.3.6'
 
     /**
      * https://github.com/bingoogolapple/BGABanner-Android
      *     图片轮番最新版本依赖库
      */
-    implementation 'cn.bingoogolapple:bga-banner:2.1.7@aar'
+    api 'cn.bingoogolapple:bga-banner:2.1.7@aar'
 
     // adapter
-    implementation 'cn.bingoogolapple:bga-adapter:1.2.0@aar'
+    api 'cn.bingoogolapple:bga-adapter:1.2.0@aar'
 
     //刷新框架
-    implementation 'cn.bingoogolapple:bga-refreshlayout:1.1.7@aar'
+    api 'cn.bingoogolapple:bga-refreshlayout:1.1.7@aar'
 
     //UINavigationBar 风格的 Titlebar
-    implementation 'cn.bingoogolapple:bga-titlebar:1.0.8@aar'
+    api 'cn.bingoogolapple:bga-titlebar:1.0.8@aar'
 
     //    compile 'com.kymjs.rxvolley:bitmapcore:latest.release'//图片加载框架
     api 'com.kymjs.core:common:1.0.10'

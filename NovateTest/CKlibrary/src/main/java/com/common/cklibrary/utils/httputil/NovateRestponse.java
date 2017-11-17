@@ -13,6 +13,7 @@ import com.tamic.novate.BaseSubscriber;
 import com.tamic.novate.Novate;
 import com.tamic.novate.RxApiManager;
 import com.tamic.novate.Throwable;
+import com.tamic.novate.callback.ResponseCallback;
 import com.tamic.novate.download.DownLoadCallBack;
 
 import java.io.File;
@@ -24,6 +25,7 @@ import java.util.Map;
 import okhttp3.Cache;
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
+import retrofit2.converter.gson.GsonConverterFactory;
 import rx.Subscription;
 
 /**
@@ -49,7 +51,7 @@ public class NovateRestponse {
                     //  .addHeader(headers) //添加公共请求头
                     //   .addParameters(parameters)//公共参数
                     .connectTimeout(120)  //连接时间 可以忽略
-                    .writeTimeout(100)
+                    .writeTimeout(200)
                     .addCookie(false)  //是否同步cooike 默认不同步
                     .addCache(isCache)  //是否缓存 默认缓存
                     //    .addCache(new Cache(FileUtils.getSaveFolder(StringConstants.CACHEPATH), StringConstants.CACHE_SIZE)) //自定义缓存
@@ -217,10 +219,10 @@ public class NovateRestponse {
         RxApiManager.get().add(KJActivityStack.create().topActivity().getClass().getName(), subscription);
     }
 
-//    public static void requestDownload1(String url, Map<String, Object> headers, String savePath, String name, DownLoadCallBack downLoadCallBack) {
-//        Subscription subscription = (Subscription) requestNovateBuilder(false).addHeader(headers).build().rxDownload(null, url, savePath, name, downLoadCallBack);
-//        RxApiManager.get().add(KJActivityStack.create().topActivity().getClass().getName(), subscription);
-//    }
+    public static void requestRxDownload(String url, Map<String, Object> headers, String savePath, String name, ResponseCallback downLoadCallBack) {
+        Subscription subscription = (Subscription) requestNovateBuilder(false).addHeader(headers).build().rxDownload(KJActivityStack.create().topActivity().getClass().getName(), url, downLoadCallBack);
+        RxApiManager.get().add(KJActivityStack.create().topActivity().getClass().getName(), subscription);
+    }
 
     /**
      * 网络请求成功
@@ -261,6 +263,7 @@ public class NovateRestponse {
      */
     public static void doFailure(int errCode, String errorMsg, ResponseListener listener) {
         Log.d("tag", errCode + "错误原因：" + errorMsg);
+        Log.d("tag", KJActivityStack.create().topActivity().getClass().getName());
         if (errCode == -1) {
             if (StringUtils.isEmpty(errorMsg)) {
                 listener.onFailure(errCode, KJActivityStack.create().topActivity().getString(R.string.clientError));
@@ -273,6 +276,8 @@ public class NovateRestponse {
             }
         } else if (errCode == TOLINGIN) {
             listener.onFailure(errCode, TOLINGIN + "");
+        } else if (errCode == 1006) {
+            listener.onFailure(errCode, errorMsg);
         } else if (errCode == 400) {
             listener.onFailure(errCode, KJActivityStack.create().topActivity().getString(R.string.grammarError));
         } else if (errCode == 401 || errCode == 407) {

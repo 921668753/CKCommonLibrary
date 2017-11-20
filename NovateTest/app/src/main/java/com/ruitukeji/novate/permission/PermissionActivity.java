@@ -26,7 +26,6 @@ import java.util.List;
 
 public class PermissionActivity extends BaseActivity {
 
-
     private static final int REQUEST_CODE_PERMISSION_SINGLE = 100;
     private static final int REQUEST_CODE_PERMISSION_MULTI = 101;
 

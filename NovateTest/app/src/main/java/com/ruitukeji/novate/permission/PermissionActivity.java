@@ -165,6 +165,7 @@ public class PermissionActivity extends BaseActivity {
                     // TODO ...
                     Toast.makeText(this, R.string.message_setting_back, Toast.LENGTH_LONG).show();
                 } else if (AndPermission.hasPermission(this, permissions)) {
+                    // TODO ...
                     Toast.makeText(this, R.string.message_setting_back, Toast.LENGTH_LONG).show();
                 } else {
                     AndPermission.defaultSettingDialog(PermissionActivity.this, REQUEST_CODE_SETTING).show();

@@ -13,6 +13,7 @@ import com.common.cklibrary.utils.rx.MsgEvent;
 import com.common.cklibrary.utils.rx.RxBus;
 import com.kymjs.common.Log;
 import com.ruitukeji.novate.download.DownloadActivity;
+import com.ruitukeji.novate.download.SingleTaskActivity;
 import com.ruitukeji.novate.entity.AppConfigBean;
 import com.ruitukeji.novate.rxbus.RxBusActivity;
 
@@ -27,6 +28,9 @@ public class MainActivity extends BaseActivity implements MainContract.View {
 
     @BindView(id = R.id.tv_webView, click = true)
     private TextView tv_webView;
+
+    @BindView(id = R.id.tv_singleTask, click = true)
+    private TextView tv_singleTask;
 
     @BindView(id = R.id.tv_rxBus, click = true)
     private TextView tv_rxBus;
@@ -71,6 +75,9 @@ public class MainActivity extends BaseActivity implements MainContract.View {
             case R.id.tv_webView:
                 showActivity(aty, DownloadActivity.class);
                 break;
+            case R.id.tv_singleTask:
+                showActivity(aty, SingleTaskActivity.class);
+                break;
             case R.id.tv_rxBus:
                 showActivity(aty, RxBusActivity.class);
                 break;
@@ -103,7 +110,7 @@ public class MainActivity extends BaseActivity implements MainContract.View {
     public void errorMsg(int errCode, String msg) {
         dismissLoadingDialog();
         Log.d("test", msg);
-  //      ViewInject.toast(msg);
+        //      ViewInject.toast(msg);
     }
 
 

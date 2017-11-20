@@ -20,4 +20,14 @@
     <string name="responseDataEmpty">服务器响应数据输出流为空</string>
     <string name="jsonError">Json解析错误</string>
 
+    <!--下拉刷新文本-->
+    <string name="pullDownRefreshText">下拉刷新</string>
+    <string name="refreshingText">加载中&#8230;</string>
+    <string name="releaseRefreshText">释放更新</string>
+    <string name="noMoreData">没有更多数据了</string>
+
+    <!--SweetAlertDialog-->
+    <string name="cancel1">&#160;&#160;&#160;取&#160;&#160;&#160;&#160;&#160;&#160;&#160;消&#160;&#160;&#160;</string>
+    <string name="confirm">&#160;&#160;&#160;确&#160;&#160;&#160;&#160;&#160;&#160;&#160;定&#160;&#160;&#160;</string>
+
 </resources>

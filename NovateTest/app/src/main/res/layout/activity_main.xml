@@ -26,6 +26,14 @@
         android:gravity="center"
         android:text="下载" />
 
+
+    <TextView
+        android:id="@+id/tv_singleTask"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen50"
+        android:gravity="center"
+        android:text="SingleTask下载" />
+
     <TextView
         android:id="@+id/tv_rxBus"
         android:layout_width="match_parent"

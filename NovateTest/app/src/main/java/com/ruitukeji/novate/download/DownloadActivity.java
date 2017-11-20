@@ -7,7 +7,6 @@ import android.widget.Toast;
 import com.common.cklibrary.common.BaseActivity;
 import com.common.cklibrary.common.BindView;
 import com.common.cklibrary.common.ViewInject;
-import com.kymjs.common.Log;
 import com.ruitukeji.novate.R;
 
 /**
@@ -21,7 +20,7 @@ public class DownloadActivity extends BaseActivity implements DownloadContract.V
     @BindView(id = R.id.tv_download, click = true)
     private TextView tv_download;
 
-    private String DOWNLOAD_URL = "http://imtt.dd.qq.com/16891/E313866A4E996564A4F38766505D4D2B.apk?fsname=com.snda.wifilocating_4.2.30_3160.apk&csr=1bbd";
+    private String DOWNLOAD_URL = "http://imtt.dd.qq.com/16891/8C3E058EAFBFD4F1EFE0AAA815250716.apk?fsname=com.tencent.mobileqq_7.1.0_692.apk&csr=1bbd";
 
     @Override
     public void setRootView() {
@@ -61,10 +60,5 @@ public class DownloadActivity extends BaseActivity implements DownloadContract.V
     public void errorMsg(int errorCode, String msg) {
         dismissLoadingDialog();
         ViewInject.toast(msg);
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
     }
 }

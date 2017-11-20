@@ -15,6 +15,7 @@ import com.kymjs.common.Log;
 import com.ruitukeji.novate.download.DownloadActivity;
 import com.ruitukeji.novate.download.SingleTaskActivity;
 import com.ruitukeji.novate.entity.AppConfigBean;
+import com.ruitukeji.novate.permission.PermissionActivity;
 import com.ruitukeji.novate.rxbus.RxBusActivity;
 
 public class MainActivity extends BaseActivity implements MainContract.View {
@@ -31,6 +32,9 @@ public class MainActivity extends BaseActivity implements MainContract.View {
 
     @BindView(id = R.id.tv_singleTask, click = true)
     private TextView tv_singleTask;
+
+    @BindView(id = R.id.tv_permission, click = true)
+    private TextView tv_permission;
 
     @BindView(id = R.id.tv_rxBus, click = true)
     private TextView tv_rxBus;
@@ -77,6 +81,9 @@ public class MainActivity extends BaseActivity implements MainContract.View {
                 break;
             case R.id.tv_singleTask:
                 showActivity(aty, SingleTaskActivity.class);
+                break;
+            case R.id.tv_permission:
+                showActivity(aty, PermissionActivity.class);
                 break;
             case R.id.tv_rxBus:
                 showActivity(aty, RxBusActivity.class);

@@ -13,4 +13,6 @@ public class PermissionActivity extends BaseActivity {
     public void setRootView() {
         setContentView(R.layout.activity_permission);
     }
+
+
 }

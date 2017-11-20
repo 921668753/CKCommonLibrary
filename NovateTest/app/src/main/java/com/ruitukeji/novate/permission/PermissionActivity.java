@@ -75,6 +75,7 @@ public class PermissionActivity extends BaseActivity {
                         })
                         .start();
                 break;
+
             case R.id.tv_contactSms:
                 // 申请多个权限。
                 AndPermission.with(this)

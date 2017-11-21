@@ -42,6 +42,13 @@
         android:text="permission权限申请使用" />
 
     <TextView
+        android:id="@+id/tv_logOutput"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen50"
+        android:gravity="center"
+        android:text="APP崩溃日志输出" />
+
+    <TextView
         android:id="@+id/tv_rxBus"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dimen50"

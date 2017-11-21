@@ -36,6 +36,9 @@ public class MainActivity extends BaseActivity implements MainContract.View {
     @BindView(id = R.id.tv_permission, click = true)
     private TextView tv_permission;
 
+    @BindView(id = R.id.tv_logOutput, click = true)
+    private TextView tv_logOutput;
+
     @BindView(id = R.id.tv_rxBus, click = true)
     private TextView tv_rxBus;
 
@@ -84,6 +87,9 @@ public class MainActivity extends BaseActivity implements MainContract.View {
                 break;
             case R.id.tv_permission:
                 showActivity(aty, PermissionActivity.class);
+                break;
+            case R.id.tv_logOutput:
+                int i = 1 / 0;
                 break;
             case R.id.tv_rxBus:
                 showActivity(aty, RxBusActivity.class);

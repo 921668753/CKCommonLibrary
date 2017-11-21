@@ -1,9 +1,23 @@
 package com.ruitukeji.novate.application;
 
+import android.app.Activity;
+import android.app.AlarmManager;
 import android.app.Application;
+import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
+import android.os.Environment;
 import android.support.multidex.MultiDex;
+import android.util.Log;
 
+import com.common.cklibrary.common.KJActivityStack;
+import com.common.cklibrary.common.StringConstants;
+import com.ruitukeji.novate.MainActivity;
+
+import cn.jesse.nativelogger.NLogger;
+import cn.jesse.nativelogger.formatter.SimpleFormatter;
+import cn.jesse.nativelogger.logger.LoggerLevel;
+import cn.jesse.nativelogger.util.CrashWatcher;
 
 
 /**
@@ -37,7 +51,7 @@ public class MyApplication extends Application {
 //        initBaiDuSDK();
         instance = this;
         mContext = getApplicationContext();
-        initDownload();
+        initLogOutput();
 //        UMShareAPI.get(this);//友盟分享
 //        initHuanXinSDK();
         testMemoryInfo();
@@ -152,11 +166,41 @@ public class MyApplication extends Application {
 
 
     /**
-     * 下载初始化
+     * 日志输出初始化
      */
-    public void initDownload() {
-
-
+    public void initLogOutput() {
+        NLogger.getInstance()
+                .builder()
+                .tag("APP")
+                .loggerLevel(LoggerLevel.DEBUG)
+                .fileLogger(true)
+                .fileDirectory(Environment.getExternalStorageDirectory() + "/" + StringConstants.ERRORLOG)
+                .fileFormatter(new SimpleFormatter())
+                .expiredPeriod(3)
+                .catchException(true, new CrashWatcher.UncaughtExceptionListener() {
+                    @Override
+                    public void uncaughtException(Thread thread, Throwable ex) {
+                        NLogger.e("uncaughtException", ex);
+                        try {
+                            Thread.sleep(1000);
+                        } catch (InterruptedException e) {
+                            NLogger.e("InterruptedException", ex);
+                        }
+                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        //      SharedPreferencesUtils.save(application.getApplicationContext(), "dingweishibai123", 1);
+                        PendingIntent restartIntent = PendingIntent.getActivity(
+                                getApplicationContext(), 0, intent,
+                                PendingIntent.FLAG_UPDATE_CURRENT);
+                        //退出程序
+                        AlarmManager mgr = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+                        mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 1000,
+                                restartIntent); // 1秒钟后重启应用
+                        KJActivityStack.create().finishAllActivity();
+                        //杀死该应用进程
+                        android.os.Process.killProcess(android.os.Process.myPid());
+                    }
+                })
+                .build();
     }
 
 

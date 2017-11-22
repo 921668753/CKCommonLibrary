@@ -88,7 +88,6 @@ public class StringNewUtils {
      * @return
      * @Title : filter
      * @Type : FilterStr
-     * @date : 2014年3月12日 下午9:17:22
      * @Description : 过滤出字母、数字和中文
      */
     public static String filter1(String character) {

@@ -1,0 +1,43 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="drawerArrowStyle">@style/AppTheme.MyDrawerArrowStyle</item>
+        <item name="windowNoTitle">true</item>
+        <!--<item name="android:homeAsUpIndicator">@mipmap/back</item>-->
+    </style>
+    <!--加入一個新的 navigation drarwer 的風格-->
+    <style name="AppTheme.MyDrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <!--將 spinBars 屬性設定為 false-->
+        <item name="spinBars">false</item>
+        <!--設定 drawer arrow 的顏色-->
+        <item name="color">@android:color/white</item>
+    </style>
+
+    <style name="Theme.AppStartLoadTranslucent" parent="AppTheme">
+        <item name="colorPrimary">@android:color/transparent</item>
+        <item name="colorPrimaryDark">@android:color/transparent</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <!--标题栏-->
+    <style name="TitleBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/titlebar_height</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="bgatitlebar_leftAndRightTextColor">@android:color/black</item>
+        <item name="bgatitlebar_leftAndRightTextSize">@dimen/textSize16</item>
+        <item name="bgatitlebar_titleTextColor">@android:color/black</item>
+        <item name="bgatitlebar_titleTextSize">@dimen/textSize18</item>
+        <item name="bgatitlebar_rightMaxWidth">@dimen/dimen150</item>
+        <item name="bgatitlebar_leftAndRightPadding">@dimen/dimen15</item>
+    </style>
+
+
+</resources>

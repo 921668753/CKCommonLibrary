@@ -8,6 +8,7 @@ import com.common.cklibrary.common.BaseActivity;
 import com.common.cklibrary.common.BindView;
 import com.common.cklibrary.common.ViewInject;
 import com.ruitukeji.novate.R;
+import com.ruitukeji.novate.statusbar.StatusBarActivity;
 
 /**
  * 下载页面
@@ -19,6 +20,9 @@ public class DownloadActivity extends BaseActivity implements DownloadContract.V
 
     @BindView(id = R.id.tv_download, click = true)
     private TextView tv_download;
+
+    @BindView(id = R.id.tv_statusBar, click = true)
+    private TextView tv_statusBar;
 
     private String DOWNLOAD_URL = "http://imtt.dd.qq.com/16891/8C3E058EAFBFD4F1EFE0AAA815250716.apk?fsname=com.tencent.mobileqq_7.1.0_692.apk&csr=1bbd";
 
@@ -39,6 +43,9 @@ public class DownloadActivity extends BaseActivity implements DownloadContract.V
         switch (v.getId()) {
             case R.id.tv_download:
                 ((DownloadContract.Presenter) mPresenter).downloadApp(DOWNLOAD_URL);
+                break;
+            case R.id.tv_statusBar:
+                showActivity(aty, StatusBarActivity.class);
                 break;
         }
     }

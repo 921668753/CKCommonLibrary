@@ -63,6 +63,12 @@
             android:name=".rxbus.RxBusActivity"
             android:screenOrientation="portrait"></activity>
 
+        <!--状态栏颜色修改-->
+        <activity
+            android:name=".statusbar.StatusBarActivity"
+            android:screenOrientation="portrait"></activity>
+
+
         <!-- 微信支付 -->
         <!-- 微信支付 -->
         <!-- 微信支付 -->

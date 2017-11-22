@@ -83,14 +83,13 @@ dependencies {
     api 'com.github.bumptech.glide:glide:4.3.1'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.3.1'
 
-    /**
-     * 图像转换开源库
-     * https://github.com/wasabeef/glide-transformations
-     */
-    api 'jp.wasabeef:glide-transformations:3.0.1'
-
-    // If you want to use the GPU Filters
-    api 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.4.1'
+//    /**
+//     * 图像转换开源库
+//     * https://github.com/wasabeef/glide-transformations
+//     */
+//    api 'jp.wasabeef:glide-transformations:3.0.1'
+//    // If you want to use the GPU Filters
+//    api 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.4.1'
 
     /**
      *  图片选择器
@@ -188,18 +187,28 @@ dependencies {
     //    annotationProcessor 'com.arialyy.aria:aria-compiler:3.3.6'
 
     /**
+     * 引导界面滑动导航 + 大于等于1页时无限轮播 + 各种切换动画轮播效果
      * https://github.com/bingoogolapple/BGABanner-Android
-     *     图片轮番最新版本依赖库
      */
-    api 'cn.bingoogolapple:bga-banner:2.1.7@aar'
+    api 'cn.bingoogolapple:bga-banner:2.1.8@aar'
 
-    // adapter
+    /**
+     * 在 AdapterView 和 RecyclerView 中通用的 Adapter 和 ViewHolder。RecyclerView 支持 DataBinding 、
+     * 多种 Item 类型、添加 Header 和 Footer。RecyclerView 竖直方向通用分割线 BGADivider
+     * https://github.com/bingoogolapple/BGABaseAdapter-Android
+     */
     api 'cn.bingoogolapple:bga-baseadapter:1.2.6@aar'
 
-    //刷新框架
+    /**
+     * 多种下拉刷新效果、上拉加载更多、可配置自定义头部广告位
+     * https://github.com/bingoogolapple/BGARefreshLayout-Android
+     */
     api 'cn.bingoogolapple:bga-refreshlayout:1.1.7@aar'
 
-    //UINavigationBar 风格的 Titlebar
+    /**
+     * Android 仿 iOS UINavigationBar 风格的 TitleBar，适用于某些 UI 设计师只出 iOS 效果图的项目
+     * https://github.com/bingoogolapple/BGATitleBar-Android
+     */
     api 'cn.bingoogolapple:bga-titlebar:1.0.8@aar'
 
     //    compile 'com.kymjs.rxvolley:bitmapcore:latest.release'//图片加载框架
@@ -241,6 +250,15 @@ dependencies {
      * https://github.com/Othershe/DUtil
      */
     api 'com.github.Othershe:DUtil:1.1.1'
+
+    /**
+     * StatusBarCompat是一个用于设置系统状态栏颜色的兼容库，
+     * 兼容Android 4.4.2(API 19)以上，使用简单，仅需要一行代码的调用。
+     * https://github.com/msdx/status-bar-compat
+     */
+    api 'com.githang:status-bar-compat:0.7'
+
+
 
     api files('libs/wechat-sdk-android-with-mta-1.1.6.jar')
     api files('libs/umeng_social_net.jar')

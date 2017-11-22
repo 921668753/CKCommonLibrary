@@ -22,7 +22,7 @@
 
 
 ## ----------------------------------
-##      common相关  utils相关
+##   cklibrary相关  common  utils
 ## ----------------------------------
 -dontusemixedcaseclassnames
 -dontshrink
@@ -50,16 +50,20 @@ public static final ** CREATOR;
 -keep class com.linkedin.** { *; }
 -keepattributes Signature
  ## ----------------------------------
- -keep class com.common.Cklibrary.entity.** { *; }        # 保持实体类不被混淆
-  -keep class com.common.Cklibrary.common.** { *; }        # 保持实体类不被混淆
- -dontwarn com.common.Cklibrary.common.**
- -keep class com.common.Cklibrary.common.** { *; }        # 保持实体类不被混淆
- -keep com.common.Cklibrary.utils.myview.** { *; }
+-keep class com.common.cklibrary.entity.** { *; }        # 保持实体类不被混淆
+-keep class com.common.cklibrary.common.** { *; }        # 保持实体类不被混淆
+-dontwarn com.common.cklibrary.common.**
+-keep class com.common.cklibrary.utils.pay.** { *; }        # 保持实体类不被混淆
+-keep com.common.cklibrary.utils.myview.** { *; }
+
+
 
 ## ----------------------------------
 ##      Novate相关
 ## ----------------------------------
  -keep class com.tamic.novate.** {*;}
+
+
 
 ## ----------------------------------
 ##      Glide相关
@@ -73,6 +77,9 @@ public static final ** CREATOR;
 
  # for DexGuard only
 # -keepresourcexmlelements manifest/application/meta-data@value=GlideModule
+
+# For retrolambda
+-dontwarn java.lang.invoke.*
 
 
 
@@ -115,12 +122,16 @@ public static final ** CREATOR;
 ##---------------End: proguard configuration for Gson  ----------
 
 
+
+
  ## ----------------------------------
  ##      SweetAlertDialog相关
  ## ----------------------------------
   -keep class cn.pedant.SweetAlert.Rotate3dAnimation {
      public <init>(...);
   }
+
+
 
 ## ----------------------------------
 ##      图片选择器
@@ -132,268 +143,6 @@ public static final ** CREATOR;
 -keep class com.lzy.imagepicker.adapter.ImageRecyclerAdapter
 
 
-
-## ----------------------------------
-##      AgentWebX5
-## ----------------------------------
--keep class com.just.agentwebX5.** {
-    *;
-}
--dontwarn com.just.agentwebX5.**
-
-#-optimizationpasses 7
-#-optimizations !code/simplification/arithmetic,!field/*,!class/merging/*
--dontoptimize
--dontusemixedcaseclassnames
--verbose
--dontskipnonpubliclibraryclasses
--dontskipnonpubliclibraryclassmembers
--dontwarn dalvik.**
--dontwarn com.tencent.smtt.**
-#-overloadaggressively
-
-#@proguard_debug_start
-# ------------------ Keep LineNumbers and properties ---------------- #
--keepattributes Exceptions,InnerClasses,Signature,Deprecated,SourceFile,LineNumberTable,*Annotation*,EnclosingMethod
--renamesourcefileattribute TbsSdkJava
--keepattributes SourceFile,LineNumberTable
-#@proguard_debug_end
-
-# --------------------------------------------------------------------------
-# Addidional for x5.sdk classes for apps
-
--keep class com.tencent.smtt.export.external.**{
-    *;
-}
-
--keep class com.tencent.tbs.video.interfaces.IUserStateChangedListener {
-	*;
-}
-
--keep class com.tencent.smtt.sdk.CacheManager {
-	public *;
-}
-
--keep class com.tencent.smtt.sdk.CookieManager {
-	public *;
-}
-
--keep class com.tencent.smtt.sdk.WebHistoryItem {
-	public *;
-}
-
--keep class com.tencent.smtt.sdk.WebViewDatabase {
-	public *;
-}
-
--keep class com.tencent.smtt.sdk.WebBackForwardList {
-	public *;
-}
-
--keep public class com.tencent.smtt.sdk.WebView {
-	public <fields>;
-	public <methods>;
-}
-
--keep public class com.tencent.smtt.sdk.WebView$HitTestResult {
-	public static final <fields>;
-	public java.lang.String getExtra();
-	public int getType();
-}
-
--keep public class com.tencent.smtt.sdk.WebView$WebViewTransport {
-	public <methods>;
-}
-
--keep public class com.tencent.smtt.sdk.WebView$PictureListener {
-	public <fields>;
-	public <methods>;
-}
-
-
--keepattributes InnerClasses
-
--keep public enum com.tencent.smtt.sdk.WebSettings$** {
-    *;
-}
-
--keep public enum com.tencent.smtt.sdk.QbSdk$** {
-    *;
-}
-
--keep public class com.tencent.smtt.sdk.WebSettings {
-    public *;
-}
-
-
--keepattributes Signature
--keep public class com.tencent.smtt.sdk.ValueCallback {
-	public <fields>;
-	public <methods>;
-}
-
--keep public class com.tencent.smtt.sdk.WebViewClient {
-	public <fields>;
-	public <methods>;
-}
-
--keep public class com.tencent.smtt.sdk.DownloadListener {
-	public <fields>;
-	public <methods>;
-}
-
--keep public class com.tencent.smtt.sdk.WebChromeClient {
-	public <fields>;
-	public <methods>;
-}
-
--keep public class com.tencent.smtt.sdk.WebChromeClient$FileChooserParams {
-	public <fields>;
-	public <methods>;
-}
-
--keep class com.tencent.smtt.sdk.SystemWebChromeClient{
-	public *;
-}
-# 1. extension interfaces should be apparent
--keep public class com.tencent.smtt.export.external.extension.interfaces.* {
-	public protected *;
-}
-
-# 2. interfaces should be apparent
--keep public class com.tencent.smtt.export.external.interfaces.* {
-	public protected *;
-}
-
--keep public class com.tencent.smtt.sdk.WebViewCallbackClient {
-	public protected *;
-}
-
--keep public class com.tencent.smtt.sdk.WebStorage$QuotaUpdater {
-	public <fields>;
-	public <methods>;
-}
-
--keep public class com.tencent.smtt.sdk.WebIconDatabase {
-	public <fields>;
-	public <methods>;
-}
-
--keep public class com.tencent.smtt.sdk.WebStorage {
-	public <fields>;
-	public <methods>;
-}
-
--keep public class com.tencent.smtt.sdk.DownloadListener {
-	public <fields>;
-	public <methods>;
-}
-
--keep public class com.tencent.smtt.sdk.QbSdk {
-	public <fields>;
-	public <methods>;
-}
-
--keep public class com.tencent.smtt.sdk.QbSdk$PreInitCallback {
-	public <fields>;
-	public <methods>;
-}
--keep public class com.tencent.smtt.sdk.CookieSyncManager {
-	public <fields>;
-	public <methods>;
-}
-
--keep public class com.tencent.smtt.sdk.Tbs* {
-	public <fields>;
-	public <methods>;
-}
-
--keep public class com.tencent.smtt.utils.LogFileUtils {
-	public <fields>;
-	public <methods>;
-}
-
--keep public class com.tencent.smtt.utils.TbsLog {
-	public <fields>;
-	public <methods>;
-}
-
--keep public class com.tencent.smtt.utils.TbsLogClient {
-	public <fields>;
-	public <methods>;
-}
-
--keep public class com.tencent.smtt.sdk.CookieSyncManager {
-	public <fields>;
-	public <methods>;
-}
-
-# Added for game demos
--keep public class com.tencent.smtt.sdk.TBSGamePlayer {
-	public <fields>;
-	public <methods>;
-}
-
--keep public class com.tencent.smtt.sdk.TBSGamePlayerClient* {
-	public <fields>;
-	public <methods>;
-}
-
--keep public class com.tencent.smtt.sdk.TBSGamePlayerClientExtension {
-	public <fields>;
-	public <methods>;
-}
-
--keep public class com.tencent.smtt.sdk.TBSGamePlayerService* {
-	public <fields>;
-	public <methods>;
-}
-
--keep public class com.tencent.smtt.utils.Apn {
-	public <fields>;
-	public <methods>;
-}
--keep class com.tencent.smtt.** {
-	*;
-}
-# end
-
-
--keep public class com.tencent.smtt.export.external.extension.proxy.ProxyWebViewClientExtension {
-	public <fields>;
-	public <methods>;
-}
-
--keep class MTT.ThirdAppInfoNew {
-	*;
-}
-
--keep class com.tencent.mtt.MttTraceEvent {
-	*;
-}
-
-# Game related
--keep public class com.tencent.smtt.gamesdk.* {
-	public protected *;
-}
-
--keep public class com.tencent.smtt.sdk.TBSGameBooter {
-        public <fields>;
-        public <methods>;
-}
-
--keep public class com.tencent.smtt.sdk.TBSGameBaseActivity {
-	public protected *;
-}
-
--keep public class com.tencent.smtt.sdk.TBSGameBaseActivityProxy {
-	public protected *;
-}
-
--keep public class com.tencent.smtt.gamesdk.internal.TBSGameServiceClient {
-	public *;
-}
-#---------------------------------------------------------------------------
 
 
 #------------------  下方是android平台自带的排除项，这里不要动         ----------------
@@ -450,6 +199,8 @@ public static final ** CREATOR;
 -keep class **JNI* {*;}
 
 
+
+
 ## ----------------------------------
 ##      AndPermission
 ## ----------------------------------
@@ -460,16 +211,110 @@ public static final ** CREATOR;
     @com.yanzhenjie.permission.PermissionNo <methods>;
 }
 
+
+
 ## ----------------------------------
-##      Aria 下载管理器
+##      友盟分享以及微信支付
 ## ----------------------------------
-#-dontwarn com.arialyy.aria.**
-#-keep class com.arialyy.aria.**{*;}
-#-keep class **$$DownloadListenerProxy{ *; }
-#-keep class **$$UploadListenerProxy{ *; }
-#-keep class **$$DownloadGroupListenerProxy{ *; }
-#-keepclasseswithmembernames class * {
-#    @Download.* <methods>;
-#    @Upload.* <methods>;
-#    @DownloadGroup.* <methods>;
-#}
+-dontusemixedcaseclassnames
+-dontshrink
+-dontoptimize
+-dontwarn com.google.android.maps.**
+-dontwarn android.webkit.WebView.**
+-dontwarn com.umeng.**
+-keep class com.umeng.** { *;}
+-dontwarn com.tencent.weibo.sdk.**
+-dontwarn com.facebook.**
+-keep public class javax.** { *;}
+-keep public class android.webkit.** { *;}
+-keep class com.umeng.socialize.handler.UMMoreHandler.** {*;}
+-dontwarn android.support.v4.**
+-keep enum com.facebook.** { *;}
+-keepattributes Exceptions,InnerClasses,Signature
+-keepattributes *Annotation*
+-keepattributes SourceFile,LineNumberTable
+
+-keep public interface com.facebook.**
+-keep public interface com.tencent.**
+-keep public interface com.umeng.socialize.**
+-keep public interface com.umeng.socialize.sensor.**
+-keep public interface com.umeng.scrshot.**
+-keep class com.android.dingtalk.share.ddsharemodule.** { *; }
+-keep public class com.umeng.socialize.* {*;}
+
+-keep class com.facebook.**
+-keep class com.facebook.** { *; }
+-keep class com.umeng.scrshot.**
+-keep public class com.tencent.** {*;}
+-keep class com.umeng.socialize.sensor.**
+-keep class com.umeng.socialize.handler.**
+-keep class com.umeng.socialize.handler.*
+-keep class com.umeng.weixin.handler.**
+-keep class com.umeng.weixin.handler.*
+-keep class com.umeng.qq.handler.**
+-keep class com.umeng.qq.handler.*
+-keep class UMMoreHandler{*;}
+-keep class com.tencent.mm.sdk.modelmsg.WXMediaMessage {*;}
+-keep class com.tencent.mm.sdk.modelmsg.** implements   com.tencent.mm.sdk.modelmsg.WXMediaMessage$IMediaObject {*;}
+-keep class im.yixin.sdk.api.YXMessage {*;}
+-keep class im.yixin.sdk.api.** implements im.yixin.sdk.api.YXMessage$YXMessageData{*;}
+-keep class com.tencent.mm.sdk.** {
+  *;
+}
+-keep class com.tencent.mm.opensdk.** {
+  *;
+}
+-dontwarn twitter4j.**
+-keep class twitter4j.** { *; }
+
+-keep class com.tencent.** {*;}
+-dontwarn com.tencent.**
+-keep public class com.umeng.com.umeng.soexample.R$*{
+public static final int *;
+}
+-keep public class com.linkedin.android.mobilesdk.R$*{
+public static final int *;
+ }
+-keepclassmembers enum * {
+public static **[] values();
+public static ** valueOf(java.lang.String);
+}
+
+-keep class com.tencent.open.TDialog$*
+-keep class com.tencent.open.TDialog$* {*;}
+-keep class com.tencent.open.PKDialog
+-keep class com.tencent.open.PKDialog {*;}
+-keep class com.tencent.open.PKDialog$*
+-keep class com.tencent.open.PKDialog$* {*;}
+
+-keep class com.sina.** {*;}
+-dontwarn com.sina.**
+-keep class  com.alipay.share.sdk.** {
+   *;
+}
+-keepnames class * implements android.os.Parcelable {
+public static final ** CREATOR;
+}
+
+-keep class com.linkedin.** { *; }
+-keepattributes Signature
+
+
+
+## ----------------------------------
+##      支付宝支付
+## ----------------------------------
+-dontwarn android.net.**
+-dontwarn com.alipay.**
+-keep class com.alipay.** { *;}
+-keep class com.alipay.android.app.IAlixPay{*;}
+-keep class com.alipay.android.app.IAlixPay$Stub{*;}
+-keep class com.alipay.android.app.IRemoteServiceCallback{*;}
+-keep class com.alipay.android.app.IRemoteServiceCallback$Stub{*;}
+-keep class com.alipay.sdk.app.PayTask{ public *;}
+-keep class com.alipay.sdk.app.AuthTask{ public *;}
+-keep class android.net.SSLCertificateSocketFactory{*;}
+-keep class com.alipay.sdk.sys.** { *; }
+-keep class android.net.** { *; }
+-keepattributes EnclosingMethod
+#-target platform,Add-on

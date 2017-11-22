@@ -27,6 +27,7 @@
 #==================Cklibrary=====================
 
 -keep class com.common.cklibrary.entity.** { *; }        # 保持实体类不被混淆
+-keep class com.common.cklibrary.utils.pay.** { *; }        # 保持实体类不被混淆
 
 #==================Cklibrary=====================
 #==================Cklibrary=====================

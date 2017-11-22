@@ -9,6 +9,7 @@ import com.common.cklibrary.common.BindView;
 import com.common.cklibrary.utils.ActivityTitleUtils;
 import com.githang.statusbar.StatusBarCompat;
 import com.ruitukeji.novate.R;
+import com.ruitukeji.novate.imagesrounded.ImagesRoundedActivity;
 
 import cn.bingoogolapple.titlebar.BGATitleBar;
 
@@ -35,6 +36,9 @@ public class StatusBarActivity extends BaseActivity {
     private TextView tv_hiddenStatusBar;
 
     private boolean isChanged = true;
+
+    @BindView(id = R.id.tv_imagesRounded, click = true)
+    private TextView tv_imagesRounded;
 
     @Override
     public void setRootView() {
@@ -71,6 +75,9 @@ public class StatusBarActivity extends BaseActivity {
                     StatusBarCompat.setTranslucent(getWindow(), false);
                     StatusBarCompat.resetActionBarContainerTopMargin(getWindow());
                 }
+                break;
+            case R.id.tv_imagesRounded:
+                showActivity(aty, ImagesRoundedActivity.class);
                 break;
             default:
                 break;

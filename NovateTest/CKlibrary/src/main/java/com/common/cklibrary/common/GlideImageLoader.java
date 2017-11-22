@@ -9,6 +9,7 @@ import com.common.cklibrary.R;
 import com.common.cklibrary.utils.GlideCatchUtil;
 import com.common.cklibrary.utils.GlideCircleTransform;
 import com.common.cklibrary.utils.GlideRoundTransform;
+import com.common.cklibrary.utils.RoundCornersTransformation;
 import com.lzy.imagepicker.loader.ImageLoader;
 
 /**
@@ -94,5 +95,132 @@ public class GlideImageLoader implements ImageLoader {
                 .into(imageView);
     }
 
+    /**
+     * 左上
+     */
+    public static void glideLeftTopLoader(Context context, Object url, ImageView imageView) {
+        GlideApp.with(context)
+                .load(url)
+//                    .placeholder(R.mipmap.default_image)
+//                    .error(R.mipmap.default_image)
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .transform(new RoundCornersTransformation(context, 10, RoundCornersTransformation.CornerType.LEFT_TOP))
+                //   .skipMemoryCache(true)//设置跳过内存缓存
+                .dontAnimate()//没有任何淡入淡出效果
+                //   .transition(withCrossFade().crossFade())//应用在淡入淡出
+                .into(imageView);
+    }
 
+    /**
+     * 左下
+     */
+    public static void glideLeftBottomLoader(Context context, Object url, ImageView imageView) {
+        GlideApp.with(context)
+                .load(url)
+//                    .placeholder(R.mipmap.default_image)
+//                    .error(R.mipmap.default_image)
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .transform(new RoundCornersTransformation(context, 10, RoundCornersTransformation.CornerType.LEFT_BOTTOM))
+                //   .skipMemoryCache(true)//设置跳过内存缓存
+                .dontAnimate()//没有任何淡入淡出效果
+                //   .transition(withCrossFade().crossFade())//应用在淡入淡出
+                .into(imageView);
+    }
+
+
+    /**
+     * 右上
+     */
+    public static void glideRightTopLoader(Context context, Object url, ImageView imageView) {
+        GlideApp.with(context)
+                .load(url)
+//                    .placeholder(R.mipmap.default_image)
+//                    .error(R.mipmap.default_image)
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .transform(new RoundCornersTransformation(context, 10, RoundCornersTransformation.CornerType.RIGHT_TOP))
+                //   .skipMemoryCache(true)//设置跳过内存缓存
+                .dontAnimate()//没有任何淡入淡出效果
+                //   .transition(withCrossFade().crossFade())//应用在淡入淡出
+                .into(imageView);
+    }
+
+    /**
+     * 右下
+     */
+    public static void glideRightBottomLoader(Context context, Object url, ImageView imageView) {
+        GlideApp.with(context)
+                .load(url)
+//                    .placeholder(R.mipmap.default_image)
+//                    .error(R.mipmap.default_image)
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .transform(new RoundCornersTransformation(context, 10, RoundCornersTransformation.CornerType.RIGHT_BOTTOM))
+                //   .skipMemoryCache(true)//设置跳过内存缓存
+                .dontAnimate()//没有任何淡入淡出效果
+                //   .transition(withCrossFade().crossFade())//应用在淡入淡出
+                .into(imageView);
+    }
+
+    /**
+     * 上侧
+     */
+    public static void glideTopLoader(Context context, Object url, ImageView imageView) {
+        GlideApp.with(context)
+                .load(url)
+//                    .placeholder(R.mipmap.default_image)
+//                    .error(R.mipmap.default_image)
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .transform(new RoundCornersTransformation(context, 10, RoundCornersTransformation.CornerType.TOP))
+                //   .skipMemoryCache(true)//设置跳过内存缓存
+                .dontAnimate()//没有任何淡入淡出效果
+                //   .transition(withCrossFade().crossFade())//应用在淡入淡出
+                .into(imageView);
+    }
+
+    /**
+     * 下侧
+     */
+    public static void glideBottomLoader(Context context, Object url, ImageView imageView) {
+        GlideApp.with(context)
+                .load(url)
+//                    .placeholder(R.mipmap.default_image)
+//                    .error(R.mipmap.default_image)
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .transform(new RoundCornersTransformation(context, 10, RoundCornersTransformation.CornerType.BOTTOM))
+                //   .skipMemoryCache(true)//设置跳过内存缓存
+                .dontAnimate()//没有任何淡入淡出效果
+                //   .transition(withCrossFade().crossFade())//应用在淡入淡出
+                .into(imageView);
+    }
+
+    /**
+     * 左侧
+     */
+    public static void glideLeftLoader(Context context, Object url, ImageView imageView) {
+        GlideApp.with(context)
+                .load(url)
+//                    .placeholder(R.mipmap.default_image)
+//                    .error(R.mipmap.default_image)
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .transform(new RoundCornersTransformation(context, 10, RoundCornersTransformation.CornerType.LEFT))
+                //   .skipMemoryCache(true)//设置跳过内存缓存
+                .dontAnimate()//没有任何淡入淡出效果
+                //   .transition(withCrossFade().crossFade())//应用在淡入淡出
+                .into(imageView);
+    }
+
+    /**
+     * 右侧
+     */
+    public static void glideRightLoader(Context context, Object url, ImageView imageView) {
+        GlideApp.with(context)
+                .load(url)
+//                    .placeholder(R.mipmap.default_image)
+//                    .error(R.mipmap.default_image)
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .transform(new RoundCornersTransformation(context, 10, RoundCornersTransformation.CornerType.RIGHT))
+                //   .skipMemoryCache(true)//设置跳过内存缓存
+                .dontAnimate()//没有任何淡入淡出效果
+                //   .transition(withCrossFade().crossFade())//应用在淡入淡出
+                .into(imageView);
+    }
 }

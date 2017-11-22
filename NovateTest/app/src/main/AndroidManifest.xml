@@ -68,6 +68,10 @@
             android:name=".statusbar.StatusBarActivity"
             android:screenOrientation="portrait"></activity>
 
+        <!--图片圆角-->
+        <activity
+            android:name=".imagesrounded.ImagesRoundedActivity"
+            android:screenOrientation="portrait"></activity>
 
         <!-- 微信支付 -->
         <!-- 微信支付 -->

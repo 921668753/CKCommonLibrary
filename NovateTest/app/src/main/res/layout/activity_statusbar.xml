@@ -33,4 +33,11 @@
         android:gravity="center"
         android:text="隐藏状态栏" />
 
+    <TextView
+        android:id="@+id/tv_imagesRounded"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen50"
+        android:gravity="center"
+        android:text="图片圆角" />
+
 </LinearLayout>

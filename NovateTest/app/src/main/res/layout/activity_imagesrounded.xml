@@ -18,71 +18,70 @@
                 android:id="@+id/img_round"
                 android:layout_width="@dimen/dimen100"
                 android:layout_height="@dimen/dimen100"
-                android:scaleType="center" />
+                android:scaleType="fitXY" />
 
             <ImageView
                 android:id="@+id/img_fillet"
                 android:layout_width="@dimen/dimen100"
                 android:layout_height="@dimen/dimen100"
                 android:layout_marginTop="@dimen/dimen10"
-                android:scaleType="center" />
+                android:scaleType="fitXY" />
 
             <ImageView
                 android:id="@+id/img_upperLeft"
                 android:layout_width="@dimen/dimen100"
                 android:layout_height="@dimen/dimen100"
                 android:layout_marginTop="@dimen/dimen10"
-                android:scaleType="center" />
+                android:scaleType="fitXY" />
 
             <ImageView
                 android:id="@+id/img_lowerLeft"
                 android:layout_width="@dimen/dimen100"
                 android:layout_height="@dimen/dimen100"
                 android:layout_marginTop="@dimen/dimen10"
-                android:scaleType="center" />
+                android:scaleType="fitXY" />
 
             <ImageView
                 android:id="@+id/img_upperRight"
                 android:layout_width="@dimen/dimen100"
                 android:layout_height="@dimen/dimen100"
                 android:layout_marginTop="@dimen/dimen10"
-                android:scaleType="center" />
-
+                android:scaleType="fitXY" />
 
             <ImageView
                 android:id="@+id/img_lowerRight"
                 android:layout_width="@dimen/dimen100"
                 android:layout_height="@dimen/dimen100"
                 android:layout_marginTop="@dimen/dimen10"
-                android:scaleType="center" />
+                android:scaleType="fitXY" />
 
             <ImageView
                 android:id="@+id/img_on"
                 android:layout_width="@dimen/dimen100"
                 android:layout_height="@dimen/dimen100"
                 android:layout_marginTop="@dimen/dimen10"
-                android:scaleType="center" />
+                android:scaleType="fitXY" />
 
             <ImageView
                 android:id="@+id/img_lower"
                 android:layout_width="@dimen/dimen100"
                 android:layout_height="@dimen/dimen100"
                 android:layout_marginTop="@dimen/dimen10"
-                android:scaleType="center" />
+                android:scaleType="fitXY" />
 
             <ImageView
                 android:id="@+id/img_left"
                 android:layout_width="@dimen/dimen100"
                 android:layout_height="@dimen/dimen100"
                 android:layout_marginTop="@dimen/dimen10"
-                android:scaleType="center" />
+                android:scaleType="fitXY" />
 
             <ImageView
                 android:id="@+id/img_right"
                 android:layout_width="@dimen/dimen100"
                 android:layout_height="@dimen/dimen100"
                 android:layout_marginTop="@dimen/dimen10"
-                android:scaleType="center" />
+                android:scaleType="fitXY" />
 
         </LinearLayout>
 

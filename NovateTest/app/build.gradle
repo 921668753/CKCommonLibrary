@@ -49,7 +49,7 @@ android {
             shrinkResources false
             // 是否进行混淆
             minifyEnabled false
-            // 混淆文件的位置
+            // 签名文件的位置
             signingConfig signingConfigs.debug
             buildConfigField "String", "BAIDU_APPKEY", "\"lIYGHXEb5pZTGFNcNiy4qPnKstmzveEM\""
             buildConfigField "String", "WEIXIN_APPKEY", "\"wx444bb74a6d803478\""
@@ -60,17 +60,17 @@ android {
             buildConfigField "String", "HUANXIN_TENANTID", "\"46895\""
             buildConfigField "String", "HUANXIN_PROJECTID", "\"2169000\""
             buildConfigField "String", "HUANXIN_IM", "\"shahaizi_kefu_001\""
+            // 混淆文件的位置
             proguardFiles 'proguard-rules.pro'
         }
         release {
-            buildConfigField "boolean", "LOG_DEBUG", "false"
             debuggable false
             jniDebuggable false
-            zipAlignEnabled false
-            shrinkResources false
+            zipAlignEnabled true
+            shrinkResources true
             // 是否进行混淆
-            minifyEnabled false
-            // 混淆文件的位置
+            minifyEnabled true
+            // 签名文件的位置
             signingConfig signingConfigs.release
             buildConfigField "String", "BAIDU_APPKEY", "\"lIYGHXEb5pZTGFNcNiy4qPnKstmzveEM\""
             buildConfigField "String", "WEIXIN_APPKEY", "\"wx444bb74a6d803478\""
@@ -81,6 +81,7 @@ android {
             buildConfigField "String", "HUANXIN_TENANTID", "\"46895\""
             buildConfigField "String", "HUANXIN_PROJECTID", "\"2169000\""
             buildConfigField "String", "HUANXIN_IM", "\"shahaizi_kefu_001\""
+            // 混淆文件的位置
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             // proguardFiles 'proguard-rules.pro'
         }
@@ -118,18 +119,15 @@ android {
     packagingOptions {
         exclude 'META-INF/services/javax.annotation.processing.Processor'
         exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/DEPENDENCIES'
         exclude 'META-INF/LICENSE.txt'
         exclude 'META-INF/NOTICE.txt'
         exclude 'META-INF/NOTICE'
         exclude 'META-INF/LICENSE'
-        exclude 'META-INF/DEPENDENCIES'
-        exclude 'META-INF/notice.txt'
-        exclude 'META-INF/license.txt'
-        exclude 'META-INF/dependencies.txt'
         exclude 'META-INF/LGPL2.1'
         exclude 'META-INF/ASL2.0'
-        exclude 'LICENSE'
-        exclude 'NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
     }
 }
 

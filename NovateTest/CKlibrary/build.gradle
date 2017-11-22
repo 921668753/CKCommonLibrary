@@ -23,6 +23,7 @@ android {
     buildTypes {
         release {
             minifyEnabled false
+            zipAlignEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -193,7 +194,7 @@ dependencies {
     api 'cn.bingoogolapple:bga-banner:2.1.7@aar'
 
     // adapter
-    api 'cn.bingoogolapple:bga-adapter:1.2.0@aar'
+    api 'cn.bingoogolapple:bga-baseadapter:1.2.6@aar'
 
     //刷新框架
     api 'cn.bingoogolapple:bga-refreshlayout:1.1.7@aar'

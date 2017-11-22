@@ -2,6 +2,28 @@
     <string name="app_name">CkLibrary</string>
     <!--工具类-->
     <string name="forFailure">获取失败</string>
+    <string name="errException"> 很抱歉，程序出现异常。</string>
+
+    <!--支付宝微信支付-->
+    <string name="operation_error">操作失败,请稍后再试</string>
+    <string name="alipay_system_exception">支付系统异常</string>
+    <string name="alipay_account_exception">此帐号绑定的支付宝账户被冻结或不允许支付</string>
+    <string name="alipay_has_unbound">该用户已解除绑定</string>
+    <string name="alipay_order_error">订单支付失败</string>
+    <string name="pay_cancel">您取消了支付</string>
+    <string name="pay_failure">支付失败</string>
+    <string name="pay_error">支付错误</string>
+    <string name="pay_network">网络连接异常</string>
+    <string name="pay_result_confirmed">支付结果确认中</string>
+    <string name="alipay_order_canceled">支付已取消</string>
+    <string name="payment_succeed">恭喜您，支付成功！</string>
+    <string name="alipay_succeed">支付成功</string>
+    <string name="authentication_rejected">认证被否决</string>
+    <string name="send_failure">发送失败</string>
+    <string name="unsupported_error">不支持错误</string>
+    <string name="wxappinstalled">请先安装微信再进行支付</string>
+    <string name="weChatLow">未安装微信或微信版本过低</string>
+    <string name="payment_error">支付参数错误</string>
 
     <!--网络请求-->
     <string name="checkNetwork">无法连接,请检查网络连接是否正常</string>

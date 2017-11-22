@@ -181,8 +181,10 @@ dependencies {
      * 从那时起便萌生了编写一个简单易用，稳当高效的下载框架，
      * aria经历了1.0到3.0的开发，算是越来越接近当初所制定的目标了。
      */
-//    api 'com.arialyy.aria:aria-core:3.3.6'
-//    annotationProcessor 'com.arialyy.aria:aria-compiler:3.3.6'
+
+    //    api 'com.arialyy.aria:aria-core:3.3.6'
+
+    //    annotationProcessor 'com.arialyy.aria:aria-compiler:3.3.6'
 
     /**
      * https://github.com/bingoogolapple/BGABanner-Android
@@ -201,6 +203,12 @@ dependencies {
 
     //    compile 'com.kymjs.rxvolley:bitmapcore:latest.release'//图片加载框架
     api 'com.kymjs.core:common:1.0.10'
+
+    /**'
+     * https://github.com/HiJesse/Android-NativeLogger
+     * 日志管理框架
+     */
+    api 'com.github.hijesse:android-logger:2.0.0'
 
     //    /**
 
@@ -232,4 +240,11 @@ dependencies {
      * https://github.com/Othershe/DUtil
      */
     api 'com.github.Othershe:DUtil:1.1.1'
+    api files('libs/wechat-sdk-android-with-mta-1.1.6.jar')
+    api files('libs/umeng_social_net.jar')
+    api files('libs/umeng_social_api.jar')
+    api files('libs/SocialSDK_WeiXin_Full.jar')
+    api files('libs/SocialSDK_QQ_Full.jar')
+    api files('libs/open_sdk_r5788_lite.jar')
+    api files('libs/alipaySdk-20161129.jar')
 }

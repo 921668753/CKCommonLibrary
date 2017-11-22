@@ -21,6 +21,8 @@
     <!--获取SD卡读写-->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--获取手机IMEI号-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
         android:name=".application.MyApplication"
@@ -61,6 +63,43 @@
             android:name=".rxbus.RxBusActivity"
             android:screenOrientation="portrait"></activity>
 
+        <!-- 微信支付 -->
+        <!-- 微信支付 -->
+        <!-- 微信支付 -->
+        <activity
+            android:name="com.common.cklibrary.utils.pay.weixin.WXPayCallbackActivity"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <activity-alias
+            android:name=".wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:targetActivity="com.common.cklibrary.utils.pay.weixin.WXPayCallbackActivity" />
+        <!-- 微信支付 -->
+        <!-- 微信支付 -->
+        <!-- 微信支付 -->
+
+
+        <!-- 支付宝支付 -->
+        <!-- 支付宝支付 -->
+        <!-- 支付宝支付 -->
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind"></activity>
+
+        <activity
+            android:name="com.alipay.sdk.auth.AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind"></activity>
+        <!-- 支付宝支付 -->
+        <!-- 支付宝支付 -->
+        <!-- 支付宝支付 -->
+
+
         <!--Anrroid 7.0SD卡路径-->
         <!--Anrroid 7.0SD卡路径-->
         <!--SD卡路径-->
@@ -75,6 +114,7 @@
         </provider>
         <!--Anrroid 7.0SD卡路径-->
         <!--Anrroid 7.0SD卡路径-->
+
     </application>
 
 

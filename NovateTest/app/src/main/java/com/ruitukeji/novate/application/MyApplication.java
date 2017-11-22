@@ -12,7 +12,10 @@ import android.util.Log;
 
 import com.common.cklibrary.common.KJActivityStack;
 import com.common.cklibrary.common.StringConstants;
+import com.common.cklibrary.common.ViewInject;
+import com.common.cklibrary.utils.logoutput.SimpleNewFormatter;
 import com.ruitukeji.novate.MainActivity;
+import com.ruitukeji.novate.R;
 
 import cn.jesse.nativelogger.NLogger;
 import cn.jesse.nativelogger.formatter.SimpleFormatter;
@@ -169,17 +172,19 @@ public class MyApplication extends Application {
      * 日志输出初始化
      */
     public void initLogOutput() {
+        NLogger.init(this);
         NLogger.getInstance()
                 .builder()
                 .tag("APP")
                 .loggerLevel(LoggerLevel.DEBUG)
                 .fileLogger(true)
-                .fileDirectory(Environment.getExternalStorageDirectory() + "/" + StringConstants.ERRORLOG)
-                .fileFormatter(new SimpleFormatter())
+                .fileDirectory(Environment.getExternalStorageDirectory().getPath() + "/" + StringConstants.ERRORLOG)
+                .fileFormatter(new SimpleNewFormatter())
                 .expiredPeriod(3)
                 .catchException(true, new CrashWatcher.UncaughtExceptionListener() {
                     @Override
                     public void uncaughtException(Thread thread, Throwable ex) {
+                        ViewInject.toast(getString(R.string.errException));
                         NLogger.e("uncaughtException", ex);
                         try {
                             Thread.sleep(1000);

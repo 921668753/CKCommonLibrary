@@ -66,6 +66,7 @@ android {
         release {
             debuggable false
             jniDebuggable false
+            multiDexEnabled true
             zipAlignEnabled true
             shrinkResources true
             // 是否进行混淆
@@ -136,7 +137,8 @@ configurations.all {
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    // implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation fileTree(include: ['*.jar'], dir: 'libs', exclude: ['android-support*.jar'])
     //    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
     //        exclude group: 'com.android.support', module: 'support-annotations'
     //    })

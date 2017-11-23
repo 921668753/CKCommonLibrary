@@ -6,7 +6,7 @@ import android.widget.TextView;
 
 import com.common.cklibrary.common.BaseActivity;
 import com.common.cklibrary.common.BindView;
-import com.common.cklibrary.common.GlideImageLoader;
+import com.common.cklibrary.utils.picturerelated.GlideImageLoader;
 import com.common.cklibrary.common.ViewInject;
 import com.common.cklibrary.utils.JsonUtil;
 import com.common.cklibrary.utils.rx.MsgEvent;
@@ -63,7 +63,7 @@ public class MainActivity extends BaseActivity implements MainContract.View {
     @Override
     public void initWidget() {
         super.initWidget();
-        GlideImageLoader.glideOrdinaryLoader(this, "http://pic.58pic.com/58pic/16/62/63/97m58PICyWM_1024.jpg", iv_head);
+        GlideImageLoader.glideOrdinaryLoader(this, "http://pic.58pic.com/58pic/16/62/63/97m58PICyWM_1024.jpg", iv_head, R.mipmap.ic_launcher);
         tv_context.setText("http://imtt.dd.qq.com/16891/8C3E058EAFBFD4F1EFE0AAA815250716.apk?fsname=com.tencent.mobileqq_7.1.0_692.apk&csr=1bbd");
     }
 

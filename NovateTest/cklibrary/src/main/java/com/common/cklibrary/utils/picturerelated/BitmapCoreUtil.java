@@ -1,4 +1,4 @@
-package com.common.cklibrary.utils;
+package com.common.cklibrary.utils.picturerelated;
 
 import android.graphics.Bitmap;
 

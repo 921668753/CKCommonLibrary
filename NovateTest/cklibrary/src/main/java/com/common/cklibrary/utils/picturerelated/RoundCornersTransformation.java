@@ -1,4 +1,4 @@
-package com.common.cklibrary.utils;
+package com.common.cklibrary.utils.picturerelated;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -16,27 +16,17 @@ import com.bumptech.glide.load.resource.bitmap.BitmapResource;
 
 import java.security.MessageDigest;
 
-import static com.common.cklibrary.utils.RoundCornersTransformation.CornerType.ALL;
-
+import static com.common.cklibrary.utils.picturerelated.RoundCornersTransformation.CornerType.ALL;
 
 /**
- * <pre>
- *     author : xiaweizi
- *     class  : com.xiaweizi.cornerslibrary.RoundCornersTransformation
- *     e-mail : 1012126908@qq.com
- *     time   : 2017/08/18
- *     desc   : 根据需求，对图片定制指定的圆角
- * </pre>
+ * : 根据需求，对图片定制指定的圆角
  */
-
 public class RoundCornersTransformation implements Transformation<Bitmap> {
-
 
     private BitmapPool mBitmapPool;
     private int mRadius;
     private int mDiameter;
     private CornerType mCornerType = ALL;
-
 
     public RoundCornersTransformation(Context context, int radius, CornerType type) {
         mBitmapPool = Glide.get(context).getBitmapPool();
@@ -44,7 +34,6 @@ public class RoundCornersTransformation implements Transformation<Bitmap> {
         mRadius = radius;
         mDiameter = 2 * mRadius;
     }
-
 
     public enum CornerType {
         /**
@@ -84,7 +73,6 @@ public class RoundCornersTransformation implements Transformation<Bitmap> {
          */
         TOP,
     }
-
 
     private void drawRoundRect(Canvas canvas, Paint paint, float width, float height) {
         switch (mCornerType) {
@@ -216,13 +204,6 @@ public class RoundCornersTransformation implements Transformation<Bitmap> {
         canvas.drawArc(new RectF(0, height - mDiameter, mDiameter, height), 90, 90, true, paint);
         canvas.drawArc(new RectF(width - mDiameter, height - mDiameter, width, height), 0, 90, true, paint);
     }
-
-
-//    @Override
-//    public String getId() {
-//        return "RoundedTransformation(radius=" + mRadius + ", diameter=" + mDiameter + ")";
-//    }
-
 
 }
 

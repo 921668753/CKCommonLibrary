@@ -1,10 +1,11 @@
-package com.ruitukeji.novate;
+package com.ruitukeji.novate.main;
 
 import com.common.cklibrary.common.KJActivityStack;
 import com.common.cklibrary.utils.httputil.NovateRestponse;
 import com.common.cklibrary.utils.httputil.ResponseChangListener;
 import com.common.cklibrary.utils.httputil.ResponseListener;
 import com.kymjs.common.Log;
+import com.ruitukeji.novate.R;
 import com.ruitukeji.novate.retrofit.RequestClient;
 
 import java.util.Map;
@@ -14,6 +15,7 @@ import java.util.Map;
  */
 
 public class MainPresenter implements MainContract.Presenter {
+
     private MainContract.View mView;
 
     public MainPresenter(MainContract.View view) {
@@ -44,9 +46,9 @@ public class MainPresenter implements MainContract.Presenter {
             @Override
             public void onChanged(String key, int progress, long fileSizeDownloaded, long totalSize) {
 //                String size = MathUtil.keepZero(((double) fileSizeDownloaded) * 100 / totalSize) + "%";
-                        Log.d("tag", progress + "");
-                        String size = progress + "%";
-                        mView.showLoadingDialog(KJActivityStack.create().topActivity().getString(R.string.download) + size);
+                Log.d("tag", progress + "");
+                String size = progress + "%";
+                mView.showLoadingDialog(KJActivityStack.create().topActivity().getString(R.string.download) + size);
             }
 
             @Override

@@ -1,4 +1,4 @@
-package com.ruitukeji.novate;
+package com.ruitukeji.novate.main;
 
 import android.view.View;
 import android.widget.ImageView;
@@ -12,6 +12,7 @@ import com.common.cklibrary.utils.JsonUtil;
 import com.common.cklibrary.utils.rx.MsgEvent;
 import com.common.cklibrary.utils.rx.RxBus;
 import com.kymjs.common.Log;
+import com.ruitukeji.novate.R;
 import com.ruitukeji.novate.download.DownloadActivity;
 import com.ruitukeji.novate.download.SingleTaskActivity;
 import com.ruitukeji.novate.entity.AppConfigBean;

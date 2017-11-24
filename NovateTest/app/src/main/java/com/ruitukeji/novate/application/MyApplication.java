@@ -1,6 +1,5 @@
 package com.ruitukeji.novate.application;
 
-import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.Application;
 import android.app.PendingIntent;
@@ -8,17 +7,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Environment;
 import android.support.multidex.MultiDex;
-import android.util.Log;
 
 import com.common.cklibrary.common.KJActivityStack;
 import com.common.cklibrary.common.StringConstants;
 import com.common.cklibrary.common.ViewInject;
 import com.common.cklibrary.utils.logoutput.SimpleNewFormatter;
-import com.ruitukeji.novate.MainActivity;
+import com.ruitukeji.novate.main.MainActivity;
 import com.ruitukeji.novate.R;
 
 import cn.jesse.nativelogger.NLogger;
-import cn.jesse.nativelogger.formatter.SimpleFormatter;
 import cn.jesse.nativelogger.logger.LoggerLevel;
 import cn.jesse.nativelogger.util.CrashWatcher;
 

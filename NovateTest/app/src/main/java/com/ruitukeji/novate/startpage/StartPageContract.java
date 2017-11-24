@@ -1,9 +1,5 @@
 package com.ruitukeji.novate.startpage;
 
-
-import android.app.Activity;
-
-import com.baidu.location.LocationClient;
 import com.common.cklibrary.common.BasePresenter;
 import com.common.cklibrary.common.BaseView;
 
@@ -20,9 +16,14 @@ public interface StartPageContract {
         void getAppConfig();
 
         /**
+         * 跳转页面
+         */
+        void jumpTo(StartPageActivity aty);
+
+        /**
          * 设置定位信息
          */
-        void initLocation(Activity activity, LocationClient mLocationClient);
+        //  void initLocation(Activity activity, LocationClient mLocationClient);
     }
 
     @SuppressWarnings("unchecked")

@@ -1,5 +1,6 @@
 package com.ruitukeji.novate.download;
 
+import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -53,7 +54,7 @@ public class SingleTaskActivity extends BaseActivity implements SingleTaskContra
 
 
     @Override
-    public void setRootView() {
+    public void setRootView(Bundle savedInstanceState) {
         setContentView(R.layout.activity_single_task);
     }
 

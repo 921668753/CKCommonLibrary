@@ -17,6 +17,7 @@
 package com.ruitukeji.novate.wxapi;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.util.Log;
 
 import com.common.cklibrary.common.BaseActivity;
@@ -36,7 +37,7 @@ public class WXPayEntryActivity extends BaseActivity implements IWXAPIEventHandl
     private IWXAPI api;
 
     @Override
-    public void setRootView() {
+    public void setRootView(Bundle savedInstanceState) {
         api = WXAPIFactory.createWXAPI(this, BuildConfig.WEIXIN_APPKEY);
         api.handleIntent(getIntent(), this);
     }

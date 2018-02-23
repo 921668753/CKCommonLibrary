@@ -1,6 +1,7 @@
 package com.ruitukeji.novate.permission;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.view.View;
 import android.widget.TextView;
@@ -40,7 +41,7 @@ public class PermissionActivity extends BaseActivity {
     List<String> permissions = null;
 
     @Override
-    public void setRootView() {
+    public void setRootView(Bundle savedInstanceState) {
         setContentView(R.layout.activity_permission);
     }
 

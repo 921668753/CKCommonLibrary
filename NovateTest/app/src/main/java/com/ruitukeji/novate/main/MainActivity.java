@@ -1,5 +1,6 @@
 package com.ruitukeji.novate.main;
 
+import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -51,7 +52,7 @@ public class MainActivity extends BaseActivity implements MainContract.View {
 
 
     @Override
-    public void setRootView() {
+    public void setRootView(Bundle savedInstanceState) {
         setContentView(R.layout.activity_main);
     }
 

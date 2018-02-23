@@ -1,6 +1,7 @@
 package com.common.cklibrary.utils.pay.weixin;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.util.Log;
 
 import com.common.cklibrary.R;
@@ -18,7 +19,7 @@ public class WXPayCallbackActivity extends BaseActivity implements IWXAPIEventHa
 
 
     @Override
-    public void setRootView() {
+    public void setRootView(Bundle savedInstanceState) {
         setContentView(R.layout.activity_wxpay_call_back);
     }
 

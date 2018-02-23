@@ -136,7 +136,7 @@ public abstract class KJActivity extends AppCompatActivity implements
         KJActivityStack.create().addActivity(this);
         Log.d(this.getClass().getName(), "---------onCreat ");
 
-        setRootView(); // 必须放在annotate之前调用
+        setRootView(savedInstanceState); // 必须放在annotate之前调用
         AnnotateUtil.initBindView(this);
         initializer();
 

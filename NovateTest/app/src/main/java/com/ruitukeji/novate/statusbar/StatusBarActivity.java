@@ -1,6 +1,7 @@
 package com.ruitukeji.novate.statusbar;
 
 import android.graphics.Color;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
@@ -41,7 +42,7 @@ public class StatusBarActivity extends BaseActivity {
     private TextView tv_imagesRounded;
 
     @Override
-    public void setRootView() {
+    public void setRootView(Bundle savedInstanceState) {
         setContentView(R.layout.activity_statusbar);
     }
 

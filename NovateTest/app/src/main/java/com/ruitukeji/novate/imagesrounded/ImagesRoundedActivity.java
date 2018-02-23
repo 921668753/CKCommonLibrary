@@ -1,6 +1,7 @@
 package com.ruitukeji.novate.imagesrounded;
 
 import android.graphics.Color;
+import android.os.Bundle;
 import android.widget.ImageView;
 
 import com.common.cklibrary.common.BaseActivity;
@@ -53,7 +54,7 @@ public class ImagesRoundedActivity extends BaseActivity {
     private ImageView img_right;
 
     @Override
-    public void setRootView() {
+    public void setRootView(Bundle savedInstanceState) {
         setContentView(R.layout.activity_imagesrounded);
     }
 

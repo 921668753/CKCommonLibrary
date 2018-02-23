@@ -1,5 +1,6 @@
 package com.ruitukeji.novate.startpage;
 
+import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
@@ -25,7 +26,7 @@ public class GuideViewActivity extends BaseActivity {
     private BGABanner mForegroundBanner;
 
     @Override
-    public void setRootView() {
+    public void setRootView(Bundle savedInstanceState) {
         setContentView(R.layout.activity_cuideview);
     }
 

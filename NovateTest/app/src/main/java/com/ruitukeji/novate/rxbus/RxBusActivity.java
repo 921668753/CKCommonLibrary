@@ -1,5 +1,6 @@
 package com.ruitukeji.novate.rxbus;
 
+import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
@@ -35,7 +36,7 @@ public class RxBusActivity extends BaseActivity implements RxBusContract.View {
     Map<String, Object> map = null;
 
     @Override
-    public void setRootView() {
+    public void setRootView(Bundle savedInstanceState) {
         setContentView(R.layout.activity_rxbus);
     }
 

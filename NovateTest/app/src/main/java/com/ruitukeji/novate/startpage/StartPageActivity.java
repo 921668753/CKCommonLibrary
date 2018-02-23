@@ -2,6 +2,7 @@ package com.ruitukeji.novate.startpage;
 
 import android.Manifest;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -35,7 +36,7 @@ public class StartPageActivity extends BaseActivity implements StartPageContract
     String[] perms = null;
 
     @Override
-    public void setRootView() {
+    public void setRootView(Bundle savedInstanceState) {
         setContentView(R.layout.activity_wxpay_call_back);
     }
 

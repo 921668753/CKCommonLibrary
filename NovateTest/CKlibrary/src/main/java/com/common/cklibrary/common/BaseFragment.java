@@ -74,8 +74,8 @@ public abstract class BaseFragment extends KJFragment implements LoadingDialogVi
 
     @Override
     public void onDestroy() {
-        super.onDestroy();
         RxManager.get().cancel(this.getClass().getName());
+        super.onDestroy();
         subscription = null;
         mLoadingDialog = null;
         mPresenter = null;

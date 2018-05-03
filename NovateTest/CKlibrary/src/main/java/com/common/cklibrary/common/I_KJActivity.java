@@ -1,5 +1,6 @@
 package com.common.cklibrary.common;
 
+import android.os.Bundle;
 import android.view.View;
 
 /**
@@ -20,7 +21,7 @@ public interface I_KJActivity {
     /**
      * 设置root界面
      */
-    void setRootView();
+    void setRootView(Bundle savedInstanceState);
 
     /**
      * 初始化数据

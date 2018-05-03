@@ -1,4 +1,4 @@
-package com.ruitukeji.novate;
+package com.ruitukeji.novate.main;
 
 
 import com.common.cklibrary.common.BasePresenter;

@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     android:orientation="vertical">
 
     <TextView
@@ -24,7 +25,28 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/dimen50"
         android:gravity="center"
-        android:text="下载" />
+        android:text="下载以及状态栏颜色更改" />
+
+    <TextView
+        android:id="@+id/tv_singleTask"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen50"
+        android:gravity="center"
+        android:text="SingleTask下载" />
+
+    <TextView
+        android:id="@+id/tv_permission"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen50"
+        android:gravity="center"
+        android:text="permission权限申请使用" />
+
+    <TextView
+        android:id="@+id/tv_logOutput"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen50"
+        android:gravity="center"
+        android:text="APP崩溃日志输出" />
 
     <TextView
         android:id="@+id/tv_rxBus"

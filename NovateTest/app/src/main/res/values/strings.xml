@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">NovateTest</string>
     <string name="download">下载中...</string>
+
+    <string name="permission_camera">相机</string>
+    <string name="permission_contact_sms">联系人，短信</string>
+    <string name="successfully">成功了</string>
+    <string name="failure">失败了</string>
+    <string name="message_setting_back">用户从设置回来</string>
 </resources>

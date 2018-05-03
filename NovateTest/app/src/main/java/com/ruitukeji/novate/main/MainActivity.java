@@ -1,22 +1,24 @@
-package com.ruitukeji.novate;
+package com.ruitukeji.novate.main;
 
+import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.common.cklibrary.common.BaseActivity;
 import com.common.cklibrary.common.BindView;
-import com.common.cklibrary.common.GlideImageLoader;
+import com.common.cklibrary.utils.picturerelated.GlideImageLoader;
 import com.common.cklibrary.common.ViewInject;
 import com.common.cklibrary.utils.JsonUtil;
 import com.common.cklibrary.utils.rx.MsgEvent;
 import com.common.cklibrary.utils.rx.RxBus;
 import com.kymjs.common.Log;
+import com.ruitukeji.novate.R;
 import com.ruitukeji.novate.download.DownloadActivity;
+import com.ruitukeji.novate.download.SingleTaskActivity;
 import com.ruitukeji.novate.entity.AppConfigBean;
+import com.ruitukeji.novate.permission.PermissionActivity;
 import com.ruitukeji.novate.rxbus.RxBusActivity;
-
-import rx.functions.Action1;
 
 public class MainActivity extends BaseActivity implements MainContract.View {
 
@@ -30,6 +32,15 @@ public class MainActivity extends BaseActivity implements MainContract.View {
     @BindView(id = R.id.tv_webView, click = true)
     private TextView tv_webView;
 
+    @BindView(id = R.id.tv_singleTask, click = true)
+    private TextView tv_singleTask;
+
+    @BindView(id = R.id.tv_permission, click = true)
+    private TextView tv_permission;
+
+    @BindView(id = R.id.tv_logOutput, click = true)
+    private TextView tv_logOutput;
+
     @BindView(id = R.id.tv_rxBus, click = true)
     private TextView tv_rxBus;
 
@@ -41,7 +52,7 @@ public class MainActivity extends BaseActivity implements MainContract.View {
 
 
     @Override
-    public void setRootView() {
+    public void setRootView(Bundle savedInstanceState) {
         setContentView(R.layout.activity_main);
     }
 
@@ -54,7 +65,7 @@ public class MainActivity extends BaseActivity implements MainContract.View {
     @Override
     public void initWidget() {
         super.initWidget();
-        GlideImageLoader.glideOrdinaryLoader(this, "http://pic.58pic.com/58pic/16/62/63/97m58PICyWM_1024.jpg", iv_head);
+        GlideImageLoader.glideOrdinaryLoader(this, "http://pic.58pic.com/58pic/16/62/63/97m58PICyWM_1024.jpg", iv_head, R.mipmap.ic_launcher);
         tv_context.setText("http://imtt.dd.qq.com/16891/8C3E058EAFBFD4F1EFE0AAA815250716.apk?fsname=com.tencent.mobileqq_7.1.0_692.apk&csr=1bbd");
     }
 
@@ -72,6 +83,15 @@ public class MainActivity extends BaseActivity implements MainContract.View {
                 break;
             case R.id.tv_webView:
                 showActivity(aty, DownloadActivity.class);
+                break;
+            case R.id.tv_singleTask:
+                showActivity(aty, SingleTaskActivity.class);
+                break;
+            case R.id.tv_permission:
+                showActivity(aty, PermissionActivity.class);
+                break;
+            case R.id.tv_logOutput:
+                int i = 1 / 0;
                 break;
             case R.id.tv_rxBus:
                 showActivity(aty, RxBusActivity.class);
@@ -105,7 +125,7 @@ public class MainActivity extends BaseActivity implements MainContract.View {
     public void errorMsg(int errCode, String msg) {
         dismissLoadingDialog();
         Log.d("test", msg);
-  //      ViewInject.toast(msg);
+        //      ViewInject.toast(msg);
     }
 
 

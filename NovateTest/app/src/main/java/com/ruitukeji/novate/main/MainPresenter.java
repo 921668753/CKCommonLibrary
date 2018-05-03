@@ -1,10 +1,11 @@
-package com.ruitukeji.novate;
+package com.ruitukeji.novate.main;
 
 import com.common.cklibrary.common.KJActivityStack;
 import com.common.cklibrary.utils.httputil.NovateRestponse;
 import com.common.cklibrary.utils.httputil.ResponseChangListener;
 import com.common.cklibrary.utils.httputil.ResponseListener;
 import com.kymjs.common.Log;
+import com.ruitukeji.novate.R;
 import com.ruitukeji.novate.retrofit.RequestClient;
 
 import java.util.Map;
@@ -14,6 +15,7 @@ import java.util.Map;
  */
 
 public class MainPresenter implements MainContract.Presenter {
+
     private MainContract.View mView;
 
     public MainPresenter(MainContract.View view) {
@@ -23,7 +25,6 @@ public class MainPresenter implements MainContract.Presenter {
 
     @Override
     public void getAppConfig() {
-
         Map<String, Object> parameters = NovateRestponse.requestParameters();
         RequestClient.getAppConfig(parameters, new ResponseListener<String>() {
             @Override
@@ -57,7 +58,12 @@ public class MainPresenter implements MainContract.Presenter {
 
             @Override
             public void onFailure(int errCode, String msg) {
-                mView.errorMsg(errCode, msg);
+                KJActivityStack.create().topActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        mView.errorMsg(errCode, msg);
+                    }
+                });
             }
         });
     }

@@ -23,6 +23,7 @@ android {
     buildTypes {
         release {
             minifyEnabled false
+            zipAlignEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -45,6 +46,7 @@ dependencies {
     //design包
     implementation 'com.android.support:design:27.1.1'
 
+
     //    /**
 
     //     * RefreshLayout that support for OverScroll and better than iOS.
@@ -61,7 +63,7 @@ dependencies {
      * 网络请求框架
      * https://github.com/Tamicer/Novate
      */
-    api 'com.tamic.novate:novate:latest.release'
+    api 'com.tamic.novate:novate:1.5.4.5'
 
     /**
      * json解析
@@ -79,16 +81,18 @@ dependencies {
      *  图片加载框架 https://github.com/bumptech/glide
      *  中文文档 https://muyangmin.github.io/glide-docs-cn/
      */
+
     api 'com.github.bumptech.glide:glide:4.7.1'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
 
-    /**
-     * 图像转换开源库
-     * https://github.com/wasabeef/glide-transformations
-     */
-    api 'jp.wasabeef:glide-transformations:3.0.1'
-    // If you want to use the GPU Filters
-    api 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.4.1'
+
+//    /**
+//     * 图像转换开源库
+//     * https://github.com/wasabeef/glide-transformations
+//     */
+//    api 'jp.wasabeef:glide-transformations:3.0.1'
+//    // If you want to use the GPU Filters
+//    api 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.4.1'
 
     /**
      *  图片选择器
@@ -163,38 +167,62 @@ dependencies {
      */
     api 'com.github.Othershe:CalendarView:1.1.0'
 
-//    /**
-//     * https://github.com/Tamicer/FastDownloader
-//     * 基于Okhttp, 结合Retrofit，使用Okio ，简化处理I/O操作，加入多种设计模式，实现基于链式的android平台多线程下载利器！
-//     */
-//    api 'com.tamic.fastdownloader:Android-FastDownloader:latest.release'
+  //   /**
+
+    //     * https://github.com/Tamicer/FastDownloader
+
+    //     * 基于Okhttp, 结合Retrofit，使用Okio ，简化处理I/O操作，加入多种设计模式，实现基于链式的android平台多线程下载利器！
+
+    //     */
+
+    //    api 'com.tamic.fastdownloader:Android-FastDownloader:latest.release'
 
     /**
+     * https://github.com/AlexLiuSheng/CheckVersionLib
      * https://github.com/AriaLyy/Aria
      * Aria项目源于工作中遇到的一个文件下载管理的需求，当时被下载折磨的痛不欲生，
      * 从那时起便萌生了编写一个简单易用，稳当高效的下载框架，
      * aria经历了1.0到3.0的开发，算是越来越接近当初所制定的目标了。
      */
-    api 'com.arialyy.aria:aria-core:latest.release'
-    annotationProcessor 'com.arialyy.aria:aria-compiler:latest.release'
+
+    //    api 'com.arialyy.aria:aria-core:3.3.6'
+
+    //    annotationProcessor 'com.arialyy.aria:aria-compiler:3.3.6'
 
     /**
+     * 引导界面滑动导航 + 大于等于1页时无限轮播 + 各种切换动画轮播效果
      * https://github.com/bingoogolapple/BGABanner-Android
-     *     图片轮番最新版本依赖库
      */
-    implementation 'cn.bingoogolapple:bga-banner:2.1.9@aar'
 
-    // adapter
-    implementation 'cn.bingoogolapple:bga-adapter:1.2.0@aar'
+    api 'cn.bingoogolapple:bga-banner:2.1.9@aar'
 
-    //刷新框架
-    implementation 'cn.bingoogolapple:bga-refreshlayout:1.1.7@aar'
+    /**
+     * 在 AdapterView 和 RecyclerView 中通用的 Adapter 和 ViewHolder。RecyclerView 支持 DataBinding 、
+     * 多种 Item 类型、添加 Header 和 Footer。RecyclerView 竖直方向通用分割线 BGADivider
+     * https://github.com/bingoogolapple/BGABaseAdapter-Android
+     */
+    api 'cn.bingoogolapple:bga-baseadapter:1.2.7@aar'
 
-    //UINavigationBar 风格的 Titlebar
-    implementation 'cn.bingoogolapple:bga-titlebar:1.0.8@aar'
+    /**
+     * 多种下拉刷新效果、上拉加载更多、可配置自定义头部广告位
+     * https://github.com/bingoogolapple/BGARefreshLayout-Android
+     */
+    api 'cn.bingoogolapple:bga-refreshlayout:1.1.7@aar'
+
+    /**
+     * Android 仿 iOS UINavigationBar 风格的 TitleBar，适用于某些 UI 设计师只出 iOS 效果图的项目
+     * https://github.com/bingoogolapple/BGATitleBar-Android
+     */
+    api 'cn.bingoogolapple:bga-titlebar:1.0.8@aar'
 
     //    compile 'com.kymjs.rxvolley:bitmapcore:latest.release'//图片加载框架
-    api 'com.kymjs.core:common:latest.release'
+    api 'com.kymjs.core:common:1.0.10'
+
+    /**'
+     * https://github.com/HiJesse/Android-NativeLogger
+     * 日志管理框架
+     */
+    api 'com.github.hijesse:android-logger:2.0.0'
 
     //    /**
 
@@ -217,4 +245,30 @@ dependencies {
      * 优秀开源项目大全
      * http://www.marno.cn/
      */
+
+    /**
+     * DUtil
+     * 一个基于okhttp的文件下载、上传工具
+     * 下载：支持多线程、断点续传下载，以及下载管理，原理、以及用法
+     * 上传：支持表单形式上传、直接将文件作为请求体上传，原理、以及用法
+     * https://github.com/Othershe/DUtil
+     */
+    api 'com.github.Othershe:DUtil:1.1.1'
+
+    /**
+     * StatusBarCompat是一个用于设置系统状态栏颜色的兼容库，
+     * 兼容Android 4.4.2(API 19)以上，使用简单，仅需要一行代码的调用。
+     * https://github.com/msdx/status-bar-compat
+     */
+    api 'com.githang:status-bar-compat:0.7'
+
+
+
+    api files('libs/wechat-sdk-android-with-mta-1.1.6.jar')
+    api files('libs/umeng_social_net.jar')
+    api files('libs/umeng_social_api.jar')
+    api files('libs/SocialSDK_WeiXin_Full.jar')
+    api files('libs/SocialSDK_QQ_Full.jar')
+    api files('libs/open_sdk_r5788_lite.jar')
+    api files('libs/alipaySdk-20161129.jar')
 }

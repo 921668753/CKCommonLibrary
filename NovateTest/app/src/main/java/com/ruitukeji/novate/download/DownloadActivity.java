@@ -1,12 +1,15 @@
 package com.ruitukeji.novate.download;
 
+import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.common.cklibrary.common.BaseActivity;
 import com.common.cklibrary.common.BindView;
 import com.common.cklibrary.common.ViewInject;
 import com.ruitukeji.novate.R;
+import com.ruitukeji.novate.statusbar.StatusBarActivity;
 
 /**
  * 下载页面
@@ -19,9 +22,13 @@ public class DownloadActivity extends BaseActivity implements DownloadContract.V
     @BindView(id = R.id.tv_download, click = true)
     private TextView tv_download;
 
+    @BindView(id = R.id.tv_statusBar, click = true)
+    private TextView tv_statusBar;
+
+    private String DOWNLOAD_URL = "http://imtt.dd.qq.com/16891/8C3E058EAFBFD4F1EFE0AAA815250716.apk?fsname=com.tencent.mobileqq_7.1.0_692.apk&csr=1bbd";
 
     @Override
-    public void setRootView() {
+    public void setRootView(Bundle savedInstanceState) {
         setContentView(R.layout.activity_download);
     }
 
@@ -36,7 +43,10 @@ public class DownloadActivity extends BaseActivity implements DownloadContract.V
         super.widgetClick(v);
         switch (v.getId()) {
             case R.id.tv_download:
-                ((DownloadContract.Presenter) mPresenter).downloadApp("http://imtt.dd.qq.com/16891/8C3E058EAFBFD4F1EFE0AAA815250716.apk?fsname=com.tencent.mobileqq_7.1.0_692.apk&csr=1bbd");
+                ((DownloadContract.Presenter) mPresenter).downloadApp(DOWNLOAD_URL);
+                break;
+            case R.id.tv_statusBar:
+                showActivity(aty, StatusBarActivity.class);
                 break;
         }
     }
@@ -47,11 +57,11 @@ public class DownloadActivity extends BaseActivity implements DownloadContract.V
         mPresenter = presenter;
     }
 
+
     @Override
     public void getSuccess(int flag, String success) {
         dismissLoadingDialog();
         ViewInject.toast(success);
-
     }
 
     @Override

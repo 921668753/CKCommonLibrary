@@ -1,6 +1,7 @@
 package com.common.cklibrary.common;
 
 import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 
@@ -68,7 +69,7 @@ public abstract class BaseActivity extends KJActivity implements LoadingDialogVi
     public void showLoadingDialog(String title) {
         if (mLoadingDialog == null) {
             mLoadingDialog = new SweetAlertDialog(KJActivityStack.create().topActivity(), SweetAlertDialog.PROGRESS_TYPE);
-            mLoadingDialog.getProgressHelper().setBarColor(getResources().getColor(R.color.dialogLoadingColor));
+            mLoadingDialog.getProgressHelper().setBarColor(Color.BLACK);
             mLoadingDialog.setCancelable(false);
         }
         mLoadingDialog.setTitleText(title);

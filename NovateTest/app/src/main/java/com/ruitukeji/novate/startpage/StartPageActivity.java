@@ -79,7 +79,8 @@ public class StartPageActivity extends BaseActivity implements StartPageContract
 
             @Override
             public void onAnimationEnd(Animation animation) {
-                getPermission();
+                ((StartPageContract.Presenter) mPresenter).jumpTo(StartPageActivity.this);
+               // getPermission();
             }
 
             @Override

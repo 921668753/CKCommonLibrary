@@ -165,7 +165,7 @@ dependencies {
      * https://github.com/Othershe/CalendarView
      * 日历控件
      */
-    api 'com.github.Othershe:CalendarView:1.1.0'
+    api 'com.github.Othershe:CalendarView:1.2.1'
 
   //   /**
 
@@ -201,13 +201,13 @@ dependencies {
      * 多种 Item 类型、添加 Header 和 Footer。RecyclerView 竖直方向通用分割线 BGADivider
      * https://github.com/bingoogolapple/BGABaseAdapter-Android
      */
-    api 'cn.bingoogolapple:bga-baseadapter:1.2.7@aar'
+    api 'cn.bingoogolapple:bga-baseadapter:1.2.9@aar'
 
     /**
      * 多种下拉刷新效果、上拉加载更多、可配置自定义头部广告位
      * https://github.com/bingoogolapple/BGARefreshLayout-Android
      */
-    api 'cn.bingoogolapple:bga-refreshlayout:1.1.7@aar'
+    api 'cn.bingoogolapple:bga-refreshlayout:1.1.8@aar'
 
     /**
      * Android 仿 iOS UINavigationBar 风格的 TitleBar，适用于某些 UI 设计师只出 iOS 效果图的项目
@@ -262,7 +262,10 @@ dependencies {
      */
     api 'com.githang:status-bar-compat:0.7'
 
-
+    /**
+     *     Picture Selector Library for Android or 多图片选择器
+     */
+    api 'com.github.LuckSiege.PictureSelector:picture_library:v2.2.3'
 
     api files('libs/wechat-sdk-android-with-mta-1.1.6.jar')
     api files('libs/umeng_social_net.jar')

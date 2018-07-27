@@ -16,11 +16,11 @@ import java.security.MessageDigest;
  * 将图片转化为圆形
  */
 
+@SuppressWarnings("deprecation")
 public class GlideCircleTransform extends BitmapTransformation {
 
-    @SuppressWarnings("deprecation")
     public GlideCircleTransform(Context context) {
-        super(context);
+        super();
     }
 
     @Override

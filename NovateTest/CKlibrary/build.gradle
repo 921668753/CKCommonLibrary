@@ -9,7 +9,7 @@ publish {
     artifactId = 'CKlibrary'//项目名称，bintray上创建Package时填写的Name项
     publishVersion = '1.0.1'//版本号
     desc = '方便使用'//描述，不重要
-    website = 'https://git../hub.com/921668753'//网站，不重要；尽量模拟github上的地址，例如我这样的；当然你有地址最好了
+    website = 'https://github.com/921668753'//网站，不重要；尽量模拟github上的地址，例如我这样的；当然你有地址最好了
     //gradlew clean build bintrayUpload -PbintrayUser=ck921668753 -PbintrayKey=e3de0402e747502abcb899648b15794a42c07ee1 -PdryRun=false
 }
 

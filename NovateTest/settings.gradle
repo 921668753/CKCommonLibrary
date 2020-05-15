@@ -1,1 +1,1 @@
-include ':app', ':cklibrary'
+include ':app', ':CKlibrary'

@@ -1,14 +1,27 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'//添加
+
+//添加
+publish {
+    repoName = 'CKlibrary'//远程仓库名字,不指明，默认是上传到maven
+    userOrg = 'ck921668753'//bintray.com你的用户名
+    groupId = 'com.common.cklibrary'//jcenter上的路径,bintray上创建Package时填写的Version control项
+    artifactId = 'CKlibrary'//项目名称，bintray上创建Package时填写的Name项
+    publishVersion = '1.0.1'//版本号
+    desc = '方便使用'//描述，不重要
+    website = 'https://git../hub.com/921668753'//网站，不重要；尽量模拟github上的地址，例如我这样的；当然你有地址最好了
+    //gradlew clean build bintrayUpload -PbintrayUser=ck921668753 -PbintrayKey=e3de0402e747502abcb899648b15794a42c07ee1 -PdryRun=false
+}
 
 android {
-    compileSdkVersion 27
-    buildToolsVersion "27.0.3"
+    compileSdkVersion cfgs.compileSdkVersion
+    buildToolsVersion cfgs.buildToolsVersion
 
     defaultConfig {
         minSdkVersion 19
         targetSdkVersion 27
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
 
         externalNativeBuild {
             cmake {
@@ -26,6 +39,20 @@ android {
             zipAlignEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+
+    //执行lint检查，有任何的错误或者警告提示，都会终止构建，我们可以将其关掉。
+    lintOptions {
+        // disable 'InvalidPackage'
+        //lint 遇到 error 时继续 构建
+        abortOnError false
+        //build release 版本 时 开启lint 检测
+        checkReleaseBuilds false
+        // 防止在发布的时候出现因MissingTranslation导致Build Failed!
+        disable 'deprecation' //忽略错误
+        disable 'unchecked' //忽略错误
+        //  disable 'w' //忽略错误
+        disable 'MissingTranslation'
     }
 
 }
@@ -167,7 +194,7 @@ dependencies {
      */
     api 'com.github.Othershe:CalendarView:1.2.1'
 
-  //   /**
+    //   /**
 
     //     * https://github.com/Tamicer/FastDownloader
 
@@ -275,3 +302,5 @@ dependencies {
     api files('libs/open_sdk_r5788_lite.jar')
     api files('libs/alipaySdk-20161129.jar')
 }
+
+

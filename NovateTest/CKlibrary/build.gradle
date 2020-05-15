@@ -49,6 +49,7 @@ android {
         //build release 版本 时 开启lint 检测
         checkReleaseBuilds false
         // 防止在发布的时候出现因MissingTranslation导致Build Failed!
+        warning 'InvalidPackage'
         disable 'deprecation' //忽略错误
         disable 'unchecked' //忽略错误
         //  disable 'w' //忽略错误
